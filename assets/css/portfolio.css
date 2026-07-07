@@ -1,0 +1,60 @@
+/* Page Banner */
+.page-banner {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 29, 48, 0.95) 0%,
+      rgba(21, 45, 71, 0.9) 100%
+    ),
+    url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200")
+      center/cover;
+  min-height: 320px;
+  position: relative;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Category Filters Button Group */
+.btn-group .btn-secondary {
+  border: 1px solid var(--border) !important;
+  background-color: #ffffff !important;
+  color: var(--primary) !important;
+  border-radius: 0;
+}
+
+.btn-group .btn-secondary:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+
+.btn-group .btn-secondary:last-child {
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.btn-group .btn-secondary.active,
+.btn-group .btn-secondary:hover {
+  background: var(--gold-gradient) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+}
+
+/* Portfolio Cards */
+.portfolio-card {
+  transition: var(--transition-smooth);
+  border-radius: var(--border-radius);
+  height: 100%;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--accent) !important;
+}
+
+.card-visual-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-item {
+  transition: var(--transition-smooth);
+}

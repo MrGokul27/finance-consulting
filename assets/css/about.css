@@ -1,0 +1,95 @@
+/* Page Banner */
+.page-banner {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 29, 48, 0.95) 0%,
+      rgba(21, 45, 71, 0.9) 100%
+    ),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200")
+      center/cover;
+  min-height: 320px;
+  position: relative;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Philosophy Section Styles */
+.philosophies-visual {
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  border-radius: var(--border-radius);
+}
+
+.philosophy-timeline {
+  position: relative;
+}
+
+.philosophy-timeline::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  bottom: 15px;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.p-item {
+  position: relative;
+  z-index: 2;
+}
+
+.p-item .badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 5px rgba(10, 29, 48, 0.95);
+  flex-shrink: 0;
+}
+
+/* Partner Cards Styling */
+.partner-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border) !important;
+}
+
+.partner-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--accent) !important;
+}
+
+.partner-img-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-img-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 29, 48, 0.4) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.partner-card:hover .partner-img-frame::after {
+  opacity: 1;
+}
+
+.partner-socials a {
+  transition: var(--transition-fast);
+}
+
+.partner-socials a:hover {
+  color: var(--accent-hover) !important;
+}

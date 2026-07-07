@@ -1,0 +1,40 @@
+/* Page Banner */
+.page-banner {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 29, 48, 0.95) 0%,
+      rgba(21, 45, 71, 0.9) 100%
+    ),
+    url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=1200")
+      center/cover;
+  min-height: 320px;
+  position: relative;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Office Location Cards */
+.office-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border) !important;
+}
+
+.office-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--accent) !important;
+}
+
+.office-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.office-card i {
+  transition: var(--transition-fast);
+}
+
+.office-card:hover i {
+  color: var(--primary) !important;
+  transform: scale(1.1);
+}
