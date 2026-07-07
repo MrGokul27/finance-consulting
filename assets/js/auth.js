@@ -97,10 +97,40 @@ if (loginForm) {
     const btn = loginForm.querySelector(".auth-submit-btn");
     btn.disabled = true;
     btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin me-2"></i> Signing in…`;
+
+    // Resolve username and save session
+    const emailVal = emailEl.value.trim().toLowerCase();
+    const roleVal = roleEl.value;
+    const passwordVal = pwEl.value;
+
+    const users = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+    const matchedUser = users.find((u) => u.email === emailVal);
+
+    let username = "";
+    if (matchedUser) {
+      username = matchedUser.username;
+    } else {
+      // Create a nice name from email
+      const prefix = emailVal.split("@")[0];
+      username = prefix
+        .split(/[\._-]/)
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    }
+
+    const currentUser = {
+      username: username,
+      role: roleVal,
+      email: emailVal,
+      password: passwordVal,
+      loginTime: new Date().toLocaleString(),
+    };
+    sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+
     setTimeout(() => {
       btn.disabled = false;
       btn.innerHTML = `<span class="btn-text">Sign In</span><i class="fa-solid fa-arrow-right ms-2"></i>`;
-      alert("Login successful! (Connect to your backend to proceed.)");
+      window.location.href = "dashboard.html";
     }, 1200);
   });
 }
@@ -260,8 +290,44 @@ if (registerForm) {
     const btn = registerForm.querySelector(".auth-submit-btn");
     btn.disabled = true;
     btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin me-2"></i> Creating account…`;
+
+    // Save to localStorage
+    const users = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+    const newUser = {
+      username: usernameEl.value.trim(),
+      role: roleEl.value,
+      email: emailEl.value.trim().toLowerCase(),
+      password: pwEl.value,
+    };
+    users.push(newUser);
+    localStorage.setItem("registeredUsers", JSON.stringify(users));
+    localStorage.setItem("lastRegisteredEmail", newUser.email);
+
     setTimeout(() => {
       window.location.href = "login.html";
     }, 1400);
   });
 }
+
+// ── Prefill last registered email if available ──────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const emailEl = document.getElementById("loginEmail");
+  const roleEl = document.getElementById("loginRole");
+  if (emailEl) {
+    const lastEmail = localStorage.getItem("lastRegisteredEmail");
+    if (lastEmail) {
+      emailEl.value = lastEmail;
+      localStorage.removeItem("lastRegisteredEmail"); // Clear after prefill
+
+      // Prefill role if user found
+      const users = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+      const matchedUser = users.find(
+        (u) => u.email === lastEmail.toLowerCase(),
+      );
+      if (matchedUser && roleEl) {
+        roleEl.value = matchedUser.role;
+        roleEl.dispatchEvent(new Event("change"));
+      }
+    }
+  }
+});

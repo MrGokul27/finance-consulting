@@ -1,0 +1,1785 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Stackly Advisory Portal</title>
+    <meta
+      name="description"
+      content="Access your Stackly Consulting advisory dashboard."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+
+    <!-- Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dash-wrapper">
+      <!-- Sidebar Overlay (mobile only) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────────────────── -->
+      <aside class="dash-sidebar" id="dashSidebar">
+        <!-- Sidebar Brand -->
+        <div class="sidebar-brand">
+          <a href="../index.html">
+            <img
+              src="../assets/images/logoStackly.webp"
+              alt="Stackly"
+              class="sidebar-brand-logo"
+            />
+          </a>
+        </div>
+
+        <!-- Sidebar User Card -->
+        <div class="sidebar-user d-flex align-items-center gap-3">
+          <div class="sidebar-user-avatar" id="sidebarAvatar">U</div>
+          <div class="sidebar-user-info min-w-0">
+            <h4 class="sidebar-user-name" id="sidebarName">Active User</h4>
+            <p class="sidebar-user-role" id="sidebarRole">Fiduciary Client</p>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+          <!-- Client Menu -->
+          <div data-role-section="client">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Investment Center</span>
+              <a href="#" class="sidebar-nav-item active">
+                <i class="fa-solid fa-chart-line"></i> Portfolio Overview
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-chart-pie"></i> Asset Allocation
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Statements & Tax
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-comments"></i> Advisor Chat
+                <span class="sidebar-nav-badge">1</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Financial Advisor Menu -->
+          <div data-role-section="advisor">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Operations Hub</span>
+              <a href="#" class="sidebar-nav-item active">
+                <i class="fa-solid fa-user-tie"></i> Advisor Hub
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-users"></i> Client Directory
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-calendar-days"></i> Meeting Scheduler
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-sliders"></i> Portfolio Rebalancing
+              </a>
+            </div>
+          </div>
+
+          <!-- Managing Partner Menu -->
+          <div data-role-section="partner">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Firm Leadership</span>
+              <a href="#" class="sidebar-nav-item active">
+                <i class="fa-solid fa-crown"></i> Executive Dashboard
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-chart-gantt"></i> Team Performance
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-vault"></i> Strategic Assets
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-scale-balanced"></i> Fiduciary &
+                Compliance
+              </a>
+            </div>
+          </div>
+
+          <!-- Administrator Menu -->
+          <div data-role-section="admin">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Control Room</span>
+              <a href="#" class="sidebar-nav-item active">
+                <i class="fa-solid fa-gears"></i> Control Panel
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-user-gear"></i> User Accounts
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-clock"></i> System Health
+              </a>
+              <a href="#" class="sidebar-nav-item">
+                <i class="fa-solid fa-receipt"></i> Log Auditing
+              </a>
+            </div>
+          </div>
+
+          <!-- Shared Menu -->
+          <div class="sidebar-nav-section">
+            <span class="sidebar-nav-label">Account Support</span>
+            <a href="#" class="sidebar-nav-item">
+              <i class="fa-solid fa-user-lock"></i> Security settings
+            </a>
+            <a href="#" class="sidebar-nav-item">
+              <i class="fa-solid fa-circle-question"></i> Help Desk
+            </a>
+          </div>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <button class="sidebar-logout" id="logoutBtn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+      <main class="dash-main">
+        <!-- Topbar -->
+        <header class="dash-topbar">
+          <div class="dash-topbar-left">
+            <button
+              class="dash-menu-toggle"
+              id="menuToggle"
+              aria-label="Toggle Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1 class="dash-page-title" id="topbarPageTitle">
+              Advisory Portal
+            </h1>
+          </div>
+
+          <div class="dash-topbar-right">
+            <!-- Notifications -->
+            <button class="dash-topbar-btn" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-notif-dot"></span>
+            </button>
+
+            <!-- User Badge -->
+            <div class="dash-topbar-user" id="topbarUserCard">
+              <div class="dash-topbar-avatar" id="topbarAvatar">U</div>
+              <div class="d-none d-sm-block text-start">
+                <div class="dash-topbar-name" id="topbarName">User</div>
+                <div class="dash-topbar-role" id="topbarRole">Client</div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="dash-content">
+          <!-- Welcome Banner -->
+          <div class="dash-welcome">
+            <div class="dash-welcome-content">
+              <span class="dash-welcome-badge" id="welcomeBadge"
+                >Secure Access</span
+              >
+              <h2 id="welcomeTitle">Welcome back, User!</h2>
+              <p id="welcomeDesc" class="mb-4">
+                Accessing your Stackly Consulting advisory account.
+              </p>
+
+              <!-- Dynamic banner stats based on role -->
+              <!-- Client Banner Stats -->
+              <div data-role-section="client">
+                <div class="dash-welcome-stats">
+                  <div class="dash-welcome-stat">
+                    <h4>+18.4%</h4>
+                    <p>Total Returns</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>Moderate</h4>
+                    <p>Risk Profile</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>Q2 Active</h4>
+                    <p>Fiduciary Period</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Advisor Banner Stats -->
+              <div data-role-section="advisor">
+                <div class="dash-welcome-stats">
+                  <div class="dash-welcome-stat">
+                    <h4>$54.8M</h4>
+                    <p>Managed AUM</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>48</h4>
+                    <p>Active Clients</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>4.9/5</h4>
+                    <p>Client Rating</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Partner Banner Stats -->
+              <div data-role-section="partner">
+                <div class="dash-welcome-stats">
+                  <div class="dash-welcome-stat">
+                    <h4>$2.84B</h4>
+                    <p>Firm AUM</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>+14.2%</h4>
+                    <p>YTD Net Inflows</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>32</h4>
+                    <p>Advisory Teams</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Admin Banner Stats -->
+              <div data-role-section="admin">
+                <div class="dash-welcome-stats">
+                  <div class="dash-welcome-stat">
+                    <h4>99.98%</h4>
+                    <p>System Uptime</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>14%</h4>
+                    <p>CPU Utilization</p>
+                  </div>
+                  <div class="dash-welcome-stat">
+                    <h4>0 Patches</h4>
+                    <p>Pending Updates</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Market Ticker -->
+          <div class="mb-4">
+            <h5
+              class="section-nav-label mb-2 fs-6 text-uppercase fw-bold text-muted"
+              style="letter-spacing: 1px; font-size: 0.75rem !important"
+            >
+              Live Markets
+            </h5>
+            <div class="market-ticker">
+              <div class="ticker-item">
+                <div class="ticker-symbol">S&P 500</div>
+                <div class="ticker-price">5,482.10</div>
+                <div class="ticker-change up">
+                  <i class="fa-solid fa-caret-up"></i> +1.18%
+                </div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-symbol">Nasdaq 100</div>
+                <div class="ticker-price">18,655.40</div>
+                <div class="ticker-change up">
+                  <i class="fa-solid fa-caret-up"></i> +1.64%
+                </div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-symbol">Dow Jones</div>
+                <div class="ticker-price">39,410.20</div>
+                <div class="ticker-change up">
+                  <i class="fa-solid fa-caret-up"></i> +0.45%
+                </div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-symbol">Gold (Oz)</div>
+                <div class="ticker-price">$2,382.40</div>
+                <div class="ticker-change down">
+                  <i class="fa-solid fa-caret-down"></i> -0.32%
+                </div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-symbol">US 10Y Yield</div>
+                <div class="ticker-price">4.184%</div>
+                <div class="ticker-change up">
+                  <i class="fa-solid fa-caret-up"></i> +0.02%
+                </div>
+              </div>
+              <div class="ticker-item">
+                <div class="ticker-symbol">Brent Crude</div>
+                <div class="ticker-price">$84.15</div>
+                <div class="ticker-change down">
+                  <i class="fa-solid fa-caret-down"></i> -0.78%
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAIN ROW (Grid of Panels) -->
+          <div class="row g-4 mb-4">
+            <!-- ── ROLE SECTION: CLIENT ──────────────────────────────────────── -->
+            <div class="col-12" data-role-section="client">
+              <div class="row g-4">
+                <!-- Client KPI Cards -->
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon gold">
+                      <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Portfolio Value</div>
+                      <div class="kpi-value">$1,245,840</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-arrow-up"></i> +$12,480 (Today)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon green">
+                      <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Total Gains</div>
+                      <div class="kpi-value">+$245,210</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-arrow-up"></i> +24.52% overall
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon navy">
+                      <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Cash Balance</div>
+                      <div class="kpi-value">$48,230</div>
+                      <div class="kpi-change neutral">Earns 4.85% APY</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon purple">
+                      <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Fiduciary Score</div>
+                      <div class="kpi-value">98 / 100</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-circle-check"></i> High compliance
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Client Performance Chart & Allocations -->
+                <div class="col-lg-8 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-chart-simple"></i> Portfolio
+                        Performance YTD
+                      </h3>
+                      <span class="badge bg-light text-primary"
+                        >Monthly Return</span
+                      >
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="css-chart mb-4">
+                        <div class="css-bar-wrap">
+                          <div class="css-bar" style="height: 45%"></div>
+                          <span class="css-bar-label">Jan</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar" style="height: 60%"></div>
+                          <span class="css-bar-label">Feb</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar" style="height: 52%"></div>
+                          <span class="css-bar-label">Mar</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar active" style="height: 85%"></div>
+                          <span class="css-bar-label">Apr</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar" style="height: 72%"></div>
+                          <span class="css-bar-label">May</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar active" style="height: 95%"></div>
+                          <span class="css-bar-label">Jun</span>
+                        </div>
+                      </div>
+
+                      <!-- Recent Holdings Table -->
+                      <h5 class="fs-6 fw-bold mb-3 mt-4 text-primary">
+                        Top Asset Holdings
+                      </h5>
+                      <div class="table-responsive">
+                        <table class="dash-table">
+                          <thead>
+                            <tr>
+                              <th>Asset Class</th>
+                              <th>Holding Details</th>
+                              <th>Current Allocation</th>
+                              <th>Current Value</th>
+                              <th>Performance</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><strong>Equities</strong></td>
+                              <td>Vanguard S&P 500 ETF (VOO)</td>
+                              <td>35.5%</td>
+                              <td>$442,273</td>
+                              <td>
+                                <span class="text-success"
+                                  ><i class="fa-solid fa-caret-up"></i>
+                                  +14.2%</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>Tech Sector</strong></td>
+                              <td>Apple & Microsoft Large Cap</td>
+                              <td>19.5%</td>
+                              <td>$242,938</td>
+                              <td>
+                                <span class="text-success"
+                                  ><i class="fa-solid fa-caret-up"></i>
+                                  +28.5%</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>Fixed Income</strong></td>
+                              <td>Bonds Portfolio Index (BND)</td>
+                              <td>25.0%</td>
+                              <td>$311,460</td>
+                              <td>
+                                <span class="text-danger"
+                                  ><i class="fa-solid fa-caret-down"></i>
+                                  -1.8%</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>Alternative Assets</strong></td>
+                              <td>Private REIT Property Fund</td>
+                              <td>10.0%</td>
+                              <td>$124,584</td>
+                              <td>
+                                <span class="text-success"
+                                  ><i class="fa-solid fa-caret-up"></i>
+                                  +4.2%</span
+                                >
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Client Allocation Sidebar Details -->
+                <div class="col-lg-4 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-pie-chart"></i> Asset Allocation
+                      </h3>
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="alloc-list mb-4">
+                        <div class="alloc-row">
+                          <span
+                            class="alloc-dot"
+                            style="background-color: var(--primary)"
+                          ></span>
+                          <span class="alloc-name">Global Equities</span>
+                          <div class="alloc-bar-track">
+                            <div
+                              class="alloc-bar-fill"
+                              style="
+                                width: 55%;
+                                background-color: var(--primary);
+                              "
+                            ></div>
+                          </div>
+                          <span class="alloc-pct">55%</span>
+                        </div>
+                        <div class="alloc-row">
+                          <span
+                            class="alloc-dot"
+                            style="background-color: var(--accent)"
+                          ></span>
+                          <span class="alloc-name">Government Bonds</span>
+                          <div class="alloc-bar-track">
+                            <div
+                              class="alloc-bar-fill"
+                              style="
+                                width: 25%;
+                                background-color: var(--accent);
+                              "
+                            ></div>
+                          </div>
+                          <span class="alloc-pct">25%</span>
+                        </div>
+                        <div class="alloc-row">
+                          <span
+                            class="alloc-dot"
+                            style="background-color: #10b981"
+                          ></span>
+                          <span class="alloc-name">Real Estate (REIT)</span>
+                          <div class="alloc-bar-track">
+                            <div
+                              class="alloc-bar-fill"
+                              style="width: 10%; background-color: #10b981"
+                            ></div>
+                          </div>
+                          <span class="alloc-pct">10%</span>
+                        </div>
+                        <div class="alloc-row">
+                          <span
+                            class="alloc-dot"
+                            style="background-color: #3b82f6"
+                          ></span>
+                          <span class="alloc-name">Cash / Liquid reserves</span>
+                          <div class="alloc-bar-track">
+                            <div
+                              class="alloc-bar-fill"
+                              style="width: 10%; background-color: #3b82f6"
+                            ></div>
+                          </div>
+                          <span class="alloc-pct">10%</span>
+                        </div>
+                      </div>
+
+                      <div class="border rounded p-3 bg-light mt-4">
+                        <h6 class="fw-bold mb-2 text-primary">
+                          <i class="fa-solid fa-circle-info"></i> Advisor
+                          Briefing
+                        </h6>
+                        <p class="small text-muted mb-0">
+                          Your portfolio is currently aligned with the
+                          <strong>Balanced Growth</strong> strategy mandate. No
+                          immediate rebalancing actions are required this
+                          quarter.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ROLE SECTION: ADVISOR ──────────────────────────────────────── -->
+            <div class="col-12" data-role-section="advisor">
+              <div class="row g-4">
+                <!-- Advisor KPI Cards -->
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon navy">
+                      <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Active Portfolios</div>
+                      <div class="kpi-value">48 Accounts</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-circle-check"></i> +3 clients this
+                        month
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon gold">
+                      <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Advisory Assets (AUM)</div>
+                      <div class="kpi-value">$54.82 Million</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-arrow-up"></i> +$2.1M inflows YTD
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon green">
+                      <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Avg Client Returns</div>
+                      <div class="kpi-value">+14.85%</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-arrow-up"></i> Outperforming
+                        Benchmark
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon red">
+                      <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Fiduciary Alerts</div>
+                      <div class="kpi-value">4 Clients</div>
+                      <div class="kpi-change down">
+                        Require rebalancing review
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Advisor Main Work Panel -->
+                <div class="col-lg-8 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-users-viewfinder"></i> Active
+                        Clients Advisory List
+                      </h3>
+                      <button
+                        class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
+                      >
+                        View All 48
+                      </button>
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="table-responsive">
+                        <table class="dash-table">
+                          <thead>
+                            <tr>
+                              <th>Client Name</th>
+                              <th>Account Tier</th>
+                              <th>Portfolio Assets</th>
+                              <th>Performance YTD</th>
+                              <th>Last Advisory Review</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><strong>Marcus Thorne</strong></td>
+                              <td>
+                                <span class="badge bg-dark text-warning"
+                                  >Ultra HNW</span
+                                >
+                              </td>
+                              <td>$12,450,000</td>
+                              <td>
+                                <span class="text-success"
+                                  ><i class="fa-solid fa-caret-up"></i>
+                                  +16.4%</span
+                                >
+                              </td>
+                              <td>July 02, 2026</td>
+                              <td>
+                                <span class="status-badge active">Aligned</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>Sarah Jenkins</strong></td>
+                              <td>
+                                <span class="badge bg-light text-primary"
+                                  >Corporate Accounts</span
+                                >
+                              </td>
+                              <td>$4,210,000</td>
+                              <td>
+                                <span class="text-success"
+                                  ><i class="fa-solid fa-caret-up"></i>
+                                  +18.2%</span
+                                >
+                              </td>
+                              <td>June 28, 2026</td>
+                              <td>
+                                <span class="status-badge active">Aligned</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>Johnathan Doe</strong></td>
+                              <td>
+                                <span class="badge bg-light text-secondary"
+                                  >Wealth Builder</span
+                                >
+                              </td>
+                              <td>$840,000</td>
+                              <td>
+                                <span class="text-success"
+                                  ><i class="fa-solid fa-caret-up"></i>
+                                  +11.8%</span
+                                >
+                              </td>
+                              <td>May 14, 2026</td>
+                              <td>
+                                <span class="status-badge review"
+                                  >Needs Review</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>Eleanor Vance</strong></td>
+                              <td>
+                                <span class="badge bg-dark text-warning"
+                                  >HNW Elite</span
+                                >
+                              </td>
+                              <td>$3,180,000</td>
+                              <td>
+                                <span class="text-danger"
+                                  ><i class="fa-solid fa-caret-down"></i>
+                                  -0.85%</span
+                                >
+                              </td>
+                              <td>April 10, 2026</td>
+                              <td>
+                                <span class="status-badge flagged"
+                                  >Out of Balance</span
+                                >
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Advisor Schedule & Reminders -->
+                <div class="col-lg-4 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-bell"></i> Tasks & Meetings
+                      </h3>
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="activity-feed">
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-primary">
+                            <i class="fa-solid fa-calendar-check"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              Meeting: <strong>Marcus Thorne</strong>
+                            </div>
+                            <div class="activity-time">
+                              Today, 2:30 PM — Portfolio Review
+                            </div>
+                          </div>
+                        </div>
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-warning">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              Drafting: <strong>Eleanor Vance</strong> Strategy
+                              Update
+                            </div>
+                            <div class="activity-time">
+                              Due tomorrow at 10:00 AM
+                            </div>
+                          </div>
+                        </div>
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-success">
+                            <i class="fa-solid fa-paper-plane"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              Send Q2 Statements to
+                              <strong>Sarah Jenkins</strong>
+                            </div>
+                            <div class="activity-time">Completed yesterday</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ROLE SECTION: PARTNER ──────────────────────────────────────── -->
+            <div class="col-12" data-role-section="partner">
+              <div class="row g-4">
+                <!-- Partner KPI Cards -->
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon navy">
+                      <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Firm Assets under Advisory</div>
+                      <div class="kpi-value">$2.84 Billion</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-arrow-up"></i> +12.4% vs Q2 2025
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon green">
+                      <i class="fa-solid fa-chart-column"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">YTD Net Fee Revenue</div>
+                      <div class="kpi-value">$18.24 Million</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-arrow-up"></i> 102% of budget
+                        target
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon gold">
+                      <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Advisory Advisors</div>
+                      <div class="kpi-value">32 Registered</div>
+                      <div class="kpi-change neutral">
+                        Across 4 regional centers
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon purple">
+                      <i class="fa-solid fa-file-shield"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Fiduciary Audit Status</div>
+                      <div class="kpi-value">100% Passed</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-check-double"></i> Full compliance
+                        maintained
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Partner Revenue Performance -->
+                <div class="col-lg-8 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-chart-line"></i> Firm AUM Advisory
+                        Growth (Billions)
+                      </h3>
+                      <span class="badge bg-primary text-white"
+                        >Quarterly Performance</span
+                      >
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="css-chart mb-4">
+                        <div class="css-bar-wrap">
+                          <div class="css-bar navy" style="height: 50%"></div>
+                          <span class="css-bar-label">Q1 25</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar navy" style="height: 62%"></div>
+                          <span class="css-bar-label">Q2 25</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar navy" style="height: 70%"></div>
+                          <span class="css-bar-label">Q3 25</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar navy" style="height: 75%"></div>
+                          <span class="css-bar-label">Q4 25</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar active" style="height: 90%"></div>
+                          <span class="css-bar-label">Q1 26</span>
+                        </div>
+                        <div class="css-bar-wrap">
+                          <div class="css-bar active" style="height: 98%"></div>
+                          <span class="css-bar-label">Q2 26</span>
+                        </div>
+                      </div>
+
+                      <h5 class="fs-6 fw-bold mb-3 mt-4 text-primary">
+                        Office Asset Contribution
+                      </h5>
+                      <div class="table-responsive">
+                        <table class="dash-table">
+                          <thead>
+                            <tr>
+                              <th>Advisory Office</th>
+                              <th>Lead Director</th>
+                              <th>Assigned Advisors</th>
+                              <th>Branch AUM Managed</th>
+                              <th>Contribution</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><strong>Mumbai HQ</strong></td>
+                              <td>Rajesh Sen, Managing Partner</td>
+                              <td>12</td>
+                              <td>$1,120,000,000</td>
+                              <td>
+                                <span class="badge bg-light text-primary"
+                                  >39.4%</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>New York City Branch</strong></td>
+                              <td>Marcus Thorne, Partner</td>
+                              <td>8</td>
+                              <td>$890,000,000</td>
+                              <td>
+                                <span class="badge bg-light text-primary"
+                                  >31.3%</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>London Advisory</strong></td>
+                              <td>Charlotte Grey, Director</td>
+                              <td>7</td>
+                              <td>$582,500,000</td>
+                              <td>
+                                <span class="badge bg-light text-primary"
+                                  >20.5%</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><strong>Singapore Hub</strong></td>
+                              <td>Kenji Sato, Partner</td>
+                              <td>5</td>
+                              <td>$250,000,000</td>
+                              <td>
+                                <span class="badge bg-light text-primary"
+                                  >8.8%</span
+                                >
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Partner Fiduciary Risk -->
+                <div class="col-lg-4 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-shield-halved"></i> Governance
+                        Feed
+                      </h3>
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="activity-feed">
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-success">
+                            <i class="fa-solid fa-certificate"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              SEBI Fiduciary Compliance Filing
+                            </div>
+                            <div class="activity-time">
+                              Submitted & Approved for FY 26
+                            </div>
+                          </div>
+                        </div>
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-primary">
+                            <i class="fa-solid fa-user-shield"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              Risk Tolerance Mandate Audits
+                            </div>
+                            <div class="activity-time">
+                              Complete: 99.4% in bounds
+                            </div>
+                          </div>
+                        </div>
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-info">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              Annual Advisory Disclosures
+                            </div>
+                            <div class="activity-time">
+                              Released to portal vaults
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ROLE SECTION: ADMIN ──────────────────────────────────────── -->
+            <div class="col-12" data-role-section="admin">
+              <div class="row g-4">
+                <!-- Admin KPI Cards -->
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon navy">
+                      <i class="fa-solid fa-server"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Main Server Health</div>
+                      <div class="kpi-value">Healthy (100%)</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-circle-check"></i> 0 system errors
+                        today
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon purple">
+                      <i class="fa-solid fa-fingerprint"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Active User Sessions</div>
+                      <div class="kpi-value">1,245 Online</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-arrow-up"></i> Peak concurrent:
+                        2,410
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon green">
+                      <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">CPU / Memory Load</div>
+                      <div class="kpi-value">14% / 42%</div>
+                      <div class="kpi-change neutral">
+                        Normal operating limits
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12">
+                  <div class="kpi-card">
+                    <div class="kpi-icon red">
+                      <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <div class="kpi-body">
+                      <div class="kpi-label">Intrusion Prevention</div>
+                      <div class="kpi-value">0 Events</div>
+                      <div class="kpi-change up">
+                        <i class="fa-solid fa-shield-check"></i> Firewall:
+                        Strict mode
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Admin Audit Log Panel -->
+                <div class="col-lg-8 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-list-check"></i> Platform Audit
+                        Trail & System Events
+                      </h3>
+                      <button
+                        class="btn btn-sm btn-outline-danger py-1 px-3 fs-7"
+                        onclick="alert('Audit logs exported successfully.')"
+                      >
+                        Export CSV
+                      </button>
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="table-responsive">
+                        <table class="dash-table">
+                          <thead>
+                            <tr>
+                              <th>Timestamp</th>
+                              <th>Event Type</th>
+                              <th>Subject</th>
+                              <th>Details / IP Address</th>
+                              <th>Security Result</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>17:02:11</td>
+                              <td>User Authenticated</td>
+                              <td>admin@stackly.com</td>
+                              <td>Login Successful — 122.164.84.10</td>
+                              <td>
+                                <span class="status-badge approved"
+                                  >Granted</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>16:58:45</td>
+                              <td>Fiduciary Cron Job</td>
+                              <td>System Engine</td>
+                              <td>Calculated returns for 1,240 clients</td>
+                              <td>
+                                <span class="status-badge approved"
+                                  >Success</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>16:44:12</td>
+                              <td>API Token Revocation</td>
+                              <td>Dev-Integration-Key</td>
+                              <td>Expired token flushed from cache</td>
+                              <td>
+                                <span class="status-badge review">Cleaned</span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>16:30:00</td>
+                              <td>Database Backup</td>
+                              <td>MySQL Backup Daemon</td>
+                              <td>Full system backup created (42.4 GB)</td>
+                              <td>
+                                <span class="status-badge approved"
+                                  >Success</span
+                                >
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Admin Action items -->
+                <div class="col-lg-4 col-12">
+                  <div class="dash-card h-100">
+                    <div class="dash-card-header">
+                      <h3 class="dash-card-title">
+                        <i class="fa-solid fa-terminal"></i> Platform
+                        Microservices
+                      </h3>
+                    </div>
+                    <div class="dash-card-body">
+                      <div class="activity-feed">
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-success">
+                            <i class="fa-solid fa-toggle-on"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              Authentication Service (Auth0 Wrapper)
+                            </div>
+                            <div class="activity-time">
+                              <span class="badge bg-success py-1 px-2"
+                                >Online</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-success">
+                            <i class="fa-solid fa-toggle-on"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              SEBI Market Price Sync Engine
+                            </div>
+                            <div class="activity-time">
+                              <span class="badge bg-success py-1 px-2"
+                                >Online</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="activity-item">
+                          <div class="activity-icon bg-light text-success">
+                            <i class="fa-solid fa-toggle-on"></i>
+                          </div>
+                          <div class="activity-body">
+                            <div class="activity-text">
+                              PDF Statement Generation Worker
+                            </div>
+                            <div class="activity-time">
+                              <span class="badge bg-success py-1 px-2"
+                                >Online</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DYNAMIC QUICK ACTIONS GRID -->
+          <div class="row g-4 mb-4">
+            <div class="col-12">
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">
+                    <i class="fa-solid fa-rocket"></i> Administrative & Advisory
+                    Actions
+                  </h3>
+                </div>
+                <div class="dash-card-body">
+                  <!-- Client Actions -->
+                  <div data-role-section="client">
+                    <div class="row g-3">
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Opening consultation booking calendar...')
+                          "
+                        >
+                          <i class="fa-solid fa-calendar-plus"></i>
+                          <span>Book Consultant</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="alert('Accessing document vault files...')"
+                        >
+                          <i class="fa-solid fa-folder-open"></i>
+                          <span>Document Vault</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Initiating deposit/transfer wizard...')
+                          "
+                        >
+                          <i class="fa-solid fa-money-bill-transfer"></i>
+                          <span>Invest Capital</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="alert('Opening active messaging module...')"
+                        >
+                          <i class="fa-solid fa-paper-plane"></i>
+                          <span>Contact Fiduciary</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Advisor Actions -->
+                  <div data-role-section="advisor">
+                    <div class="row g-3">
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Opening new client registration wizard...')
+                          "
+                        >
+                          <i class="fa-solid fa-user-plus"></i>
+                          <span>Onboard Client</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="alert('Opening risk assessment tool...')"
+                        >
+                          <i class="fa-solid fa-gauge-high"></i>
+                          <span>Risk Assessment</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Running rebalance calculation engine...')
+                          "
+                        >
+                          <i class="fa-solid fa-sliders"></i>
+                          <span>Trigger Rebalance</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Generating advisory report template...')
+                          "
+                        >
+                          <i class="fa-solid fa-file-signature"></i>
+                          <span>Draft Strategy</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Partner Actions -->
+                  <div data-role-section="partner">
+                    <div class="row g-3">
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert(
+                              'Generating executive firm performance summaries...',
+                            )
+                          "
+                        >
+                          <i class="fa-solid fa-chart-pie"></i>
+                          <span>Executive Summary</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Initiating advisor compliance reviews...')
+                          "
+                        >
+                          <i class="fa-solid fa-user-check"></i>
+                          <span>Audit Advisor</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Opening strategic budget planning maps...')
+                          "
+                        >
+                          <i class="fa-solid fa-map-location-dot"></i>
+                          <span>Strategic Map</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Accessing compliance database portal...')
+                          "
+                        >
+                          <i class="fa-solid fa-stamp"></i>
+                          <span>Fiduciary Audit</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Admin Actions -->
+                  <div data-role-section="admin">
+                    <div class="row g-3">
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Running database optimization script...')
+                          "
+                        >
+                          <i class="fa-solid fa-database"></i>
+                          <span>Backup Database</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="alert('Invalidating user session tokens...')"
+                        >
+                          <i class="fa-solid fa-key"></i>
+                          <span>Flush Cache</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          onclick="
+                            alert('Opening user roles permission manager...')
+                          "
+                        >
+                          <i class="fa-solid fa-shield-halved"></i>
+                          <span>User Permissions</span>
+                        </a>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <a
+                          href="#"
+                          class="quick-action"
+                          style="border-color: #f87171"
+                          onclick="
+                            if (
+                              confirm(
+                                'Are you sure you want to trigger a system reboot?',
+                              )
+                            ) {
+                              alert('Rebooting servers...');
+                            }
+                          "
+                        >
+                          <i
+                            class="fa-solid fa-power-off"
+                            style="color: #f87171"
+                          ></i>
+                          <span style="color: #f87171">Reboot Gateway</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- USER FORM CREDENTIAL AUDIT CARD (Always Visible) -->
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="dash-card">
+                <div
+                  class="dash-card-header"
+                  style="background: var(--navy-gradient); color: white"
+                >
+                  <h3 class="dash-card-title text-white">
+                    <i class="fa-solid fa-fingerprint text-warning"></i> Portal
+                    Sign-In Credentials Audit
+                  </h3>
+                  <span class="badge bg-light text-primary"
+                    >Security Integrity Verification</span
+                  >
+                </div>
+                <div class="dash-card-body p-4">
+                  <p class="text-muted small mb-4">
+                    In compliance with security audit guidelines, here are the
+                    exact parameters submitted during authentication. This card
+                    verifies that the form-input payload was received, parsed,
+                    and successfully integrated.
+                  </p>
+
+                  <div class="row g-4">
+                    <div class="col-lg-8 col-12">
+                      <div class="row g-3">
+                        <div class="col-md-6 col-12">
+                          <div class="border rounded p-3 bg-light">
+                            <span
+                              class="d-block text-muted text-uppercase fw-bold fs-8 mb-1"
+                              style="font-size: 0.65rem"
+                              >Login Email Address</span
+                            >
+                            <span
+                              class="fw-semibold text-primary"
+                              id="auditEmail"
+                              >name@example.com</span
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                          <div class="border rounded p-3 bg-light">
+                            <span
+                              class="d-block text-muted text-uppercase fw-bold fs-8 mb-1"
+                              style="font-size: 0.65rem"
+                              >Assigned Role Scope</span
+                            >
+                            <span
+                              class="fw-semibold text-primary text-capitalize"
+                              id="auditRole"
+                              >Client</span
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                          <div class="border rounded p-3 bg-light">
+                            <span
+                              class="d-block text-muted text-uppercase fw-bold fs-8 mb-1"
+                              style="font-size: 0.65rem"
+                              >Session Login Date/Time</span
+                            >
+                            <span
+                              class="fw-semibold text-primary"
+                              id="auditLoginTime"
+                              >Not Available</span
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                          <div class="border rounded p-3 bg-light">
+                            <span
+                              class="d-block text-muted text-uppercase fw-bold fs-8 mb-1"
+                              style="font-size: 0.65rem"
+                              >Access Authorization Password</span
+                            >
+                            <div
+                              class="d-flex align-items-center justify-content-between"
+                            >
+                              <span
+                                class="fw-semibold text-primary password-text"
+                                id="auditPassword"
+                                style="
+                                  font-family: monospace;
+                                  letter-spacing: 2px;
+                                "
+                                >••••••••</span
+                              >
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-link p-0 text-decoration-none"
+                                id="togglePasswordAudit"
+                                aria-label="Toggle Password Visibility"
+                              >
+                                <i class="fa-solid fa-eye text-muted"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-12">
+                      <div
+                        class="border rounded p-3 bg-light h-100 d-flex flex-column justify-content-center"
+                      >
+                        <span
+                          class="d-block text-muted text-uppercase fw-bold fs-8 mb-2 text-center"
+                          style="font-size: 0.65rem"
+                          >User Agent / Client Device</span
+                        >
+                        <div class="text-center">
+                          <i
+                            class="fa-solid fa-desktop fa-2x text-muted mb-2"
+                          ></i>
+                          <div
+                            class="small text-muted text-truncate"
+                            id="auditDevice"
+                            title=""
+                          >
+                            Resolving device...
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page Logic Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ── 1. Enforce Authentication & Fetch User Session ────────────────
+        const sessionData = sessionStorage.getItem("currentUser");
+        if (!sessionData) {
+          // No user session found, redirect to login
+          alert("Access Denied. Please log in to view the dashboard.");
+          window.location.href = "login.html";
+          return;
+        }
+
+        const user = JSON.parse(sessionData);
+
+        // Map roles values to readable titles
+        const roleTitles = {
+          client: "Fiduciary Client",
+          advisor: "Financial Advisor",
+          partner: "Managing Partner",
+          admin: "Administrator",
+        };
+
+        const readableRole = roleTitles[user.role] || user.role;
+
+        // Get initials for Avatar
+        let initials = "U";
+        if (user.username) {
+          const parts = user.username.split(" ");
+          initials = parts
+            .map((p) => p[0])
+            .join("")
+            .substring(0, 2)
+            .toUpperCase();
+        } else if (user.email) {
+          initials = user.email[0].toUpperCase();
+        }
+
+        // ── 2. Populate User Information in UI ─────────────────────────────
+        // Sidebar profile
+        document.getElementById("sidebarAvatar").textContent = initials;
+        document.getElementById("sidebarName").textContent =
+          user.username || "Advisory User";
+        document.getElementById("sidebarRole").textContent = readableRole;
+
+        // Topbar Profile
+        document.getElementById("topbarAvatar").textContent = initials;
+        document.getElementById("topbarName").textContent =
+          user.username || "Advisory User";
+        document.getElementById("topbarRole").textContent = readableRole;
+        document.getElementById("topbarPageTitle").textContent =
+          readableRole + " Portal";
+
+        // Welcome Banner
+        document.getElementById("welcomeTitle").textContent =
+          "Welcome back, " + (user.username || "User") + "!";
+
+        const welcomeDescriptions = {
+          client:
+            "Here is a snapshot of your investment advisory portfolio, asset allocation, and current returns.",
+          advisor:
+            "You have 5 clients awaiting rebalancing reviews today. Check schedule and tasks below.",
+          partner:
+            "Stackly Consulting fiduciary assets under advisory are currently performing at +14.2% YTD.",
+          admin:
+            "The platform microservices are healthy. No active security logs require intervention.",
+        };
+        document.getElementById("welcomeDesc").textContent =
+          welcomeDescriptions[user.role] ||
+          "Accessing your Stackly Consulting advisory account.";
+
+        // Credentials audit section
+        document.getElementById("auditEmail").textContent = user.email;
+        document.getElementById("auditRole").textContent = readableRole;
+        document.getElementById("auditLoginTime").textContent =
+          user.loginTime || new Date().toLocaleString();
+
+        // Setup password show/hide variables
+        const passwordAuditEl = document.getElementById("auditPassword");
+        const togglePasswordBtn = document.getElementById(
+          "togglePasswordAudit",
+        );
+        let passwordShown = false;
+
+        togglePasswordBtn.addEventListener("click", () => {
+          passwordShown = !passwordShown;
+          if (passwordShown) {
+            passwordAuditEl.textContent = user.password;
+            togglePasswordBtn.innerHTML =
+              '<i class="fa-solid fa-eye-slash text-muted"></i>';
+            passwordAuditEl.style.letterSpacing = "normal";
+          } else {
+            passwordAuditEl.textContent = "••••••••";
+            togglePasswordBtn.innerHTML =
+              '<i class="fa-solid fa-eye text-muted"></i>';
+            passwordAuditEl.style.letterSpacing = "2px";
+          }
+        });
+
+        // Device User Agent Audit
+        const deviceEl = document.getElementById("auditDevice");
+        deviceEl.textContent = navigator.userAgent;
+        deviceEl.setAttribute("title", navigator.userAgent);
+
+        // ── 3. Apply Role-Based Visibility filter ────────────────────────
+        // Show sections matching user.role, hide others
+        const allSections = document.querySelectorAll("[data-role-section]");
+        allSections.forEach((section) => {
+          const sectionRole = section.getAttribute("data-role-section");
+          if (sectionRole === user.role) {
+            section.classList.add("visible");
+          } else {
+            section.classList.remove("visible");
+          }
+        });
+
+        // ── 4. Setup Mobile Sidebar Interactive Controls ─────────────────
+        const sidebar = document.getElementById("dashSidebar");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+        const menuToggle = document.getElementById("menuToggle");
+
+        menuToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("open");
+          sidebarOverlay.classList.toggle("show");
+        });
+
+        sidebarOverlay.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // ── 5. Setup Logout Handler ──────────────────────────────────────
+        const logoutBtn = document.getElementById("logoutBtn");
+        logoutBtn.addEventListener("click", () => {
+          if (
+            confirm(
+              "Are you sure you want to sign out of your secure portal session?",
+            )
+          ) {
+            sessionStorage.removeItem("currentUser");
+            window.location.href = "login.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
