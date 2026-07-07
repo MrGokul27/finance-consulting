@@ -61,6 +61,16 @@
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            onclick="
+              if (
+                this.href &&
+                this.href !== '#' &&
+                this.href !== window.location.href
+              ) {
+                window.location.href = this.href;
+                return false;
+              }
+            "
             >Services</a
           >
           <ul
@@ -71,17 +81,12 @@
               <a
                 class="dropdown-item"
                 href=""
-                data-page="services"
-                data-hash="wealth"
+                data-page="services/wealth-management"
                 >Wealth Management</a
               >
             </li>
             <li>
-              <a
-                class="dropdown-item"
-                href=""
-                data-page="services"
-                data-hash="tax"
+              <a class="dropdown-item" href="" data-page="services/tax-planning"
                 >Tax Planning</a
               >
             </li>
@@ -89,8 +94,7 @@
               <a
                 class="dropdown-item"
                 href=""
-                data-page="services"
-                data-hash="investment"
+                data-page="services/investment-advisory"
                 >Investment Advisory</a
               >
             </li>
@@ -98,8 +102,7 @@
               <a
                 class="dropdown-item"
                 href=""
-                data-page="services"
-                data-hash="retirement"
+                data-page="services/retirement-planning"
                 >Retirement Planning</a
               >
             </li>

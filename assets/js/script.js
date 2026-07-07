@@ -11,15 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ── Depth detection ───────────────────────────────────────────────────────
-  // Works for: index.html (root), pages/*.html (depth 1)
+  // Works for: index.html (root), pages/*.html (depth 1), pages/services/*.html (depth 2)
+  const inServicesSubpage =
+    window.location.pathname.includes("/pages/services/");
   const inPages = window.location.pathname.includes("/pages/");
-  const root = inPages ? "../" : ""; // path back to project root
-  const pages = inPages ? "" : "pages/"; // path forward to /pages/
+  const root = inServicesSubpage ? "../../" : inPages ? "../" : ""; // path back to project root
+  const pages = inServicesSubpage ? "../" : inPages ? "" : "pages/"; // path forward to /pages/
 
   // Build a URL for a given page slug and optional hash
+  // Services subpages use data-page="services/wealth-management" etc.
   function url(page, hash) {
-    const href =
-      page === "index" ? `${root}index.html` : `${pages}${page}.html`;
+    let href;
+    if (page === "index") {
+      href = `${root}index.html`;
+    } else if (page.startsWith("services/")) {
+      href = `${pages}${page}.html`;
+    } else {
+      href = `${pages}${page}.html`;
+    }
     return hash ? `${href}#${hash}` : href;
   }
 
@@ -138,12 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── Active nav highlight ──────────────────────────────────────────────────
   function highlightActive() {
-    const current =
-      window.location.pathname.split("/").pop().replace(".html", "") || "index";
+    const path = window.location.pathname;
+    const current = path.split("/").pop().replace(".html", "") || "index";
+    const isServicesSubpage = path.includes("/pages/services/");
     document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
       link.classList.remove("active");
       const page = link.getAttribute("data-page");
-      if (page === current || (current === "" && page === "index")) {
+      if (isServicesSubpage && page === "services") {
+        link.classList.add("active");
+      } else if (page === current || (current === "" && page === "index")) {
         link.classList.add("active");
       }
     });
