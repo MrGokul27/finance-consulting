@@ -11,6 +11,23 @@
   min-height: 320px;
   position: relative;
   border-bottom: 3px solid var(--accent);
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.page-banner h1,
+.page-banner p,
+.page-banner .section-badge {
+  text-align: left;
+}
+
+.page-banner .breadcrumb-nav {
+  justify-content: flex-start;
+}
+
+/* Mission Image Wrapper */
+.about-mission-img-wrap {
+  border-radius: var(--border-radius);
 }
 
 /* Philosophy Section Styles */
@@ -50,6 +67,30 @@
   font-weight: 700;
   box-shadow: 0 0 0 5px rgba(10, 29, 48, 0.95);
   flex-shrink: 0;
+}
+
+/* Core Values Cards */
+.about-value-card {
+  border: 1px solid var(--border);
+  transition: var(--transition-smooth);
+}
+
+.about-value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--accent) !important;
+}
+
+.about-value-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
 }
 
 /* Partner Cards Styling */
@@ -92,4 +133,169 @@
 
 .partner-socials a:hover {
   color: var(--accent-hover) !important;
+}
+
+/* Awards Grid */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.award-badge-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+}
+
+.award-badge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(197, 168, 128, 0.4);
+}
+
+.award-badge-card i {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+}
+
+.award-badge-card--gold i {
+  color: var(--accent);
+}
+
+.award-badge-card h5 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--primary);
+}
+
+.award-badge-card p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Credentials List */
+.cred-item {
+  padding: 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  transition: var(--transition-smooth);
+}
+
+.cred-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.cred-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.cred-item h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.cred-item p {
+  font-size: 0.82rem;
+}
+
+/* Timeline Section */
+.about-timeline-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  border-radius: var(--border-radius);
+  padding: 28px 24px;
+  height: 100%;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition-smooth);
+}
+
+.about-timeline-card:hover::before {
+  transform: scaleX(1);
+}
+
+.about-timeline-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(197, 168, 128, 0.4);
+  transform: translateY(-6px);
+}
+
+.about-timeline-year {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+/* Differentiators choose-item override for about page */
+.choose-item {
+  transition: var(--transition-smooth);
+}
+
+.choose-item:hover {
+  border-color: var(--accent) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.choose-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--accent-light);
+  color: var(--accent-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
 }

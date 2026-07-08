@@ -13,6 +13,29 @@
   border-bottom: 3px solid var(--accent);
 }
 
+/* Stats Bar */
+.portfolio-stat-item {
+  padding: 16px 8px;
+}
+
+.portfolio-stat-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.portfolio-stat-label {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* Category Filters Button Group */
 .btn-group .btn-secondary {
   border: 1px solid var(--border) !important;
@@ -51,10 +74,90 @@
   border-color: var(--accent) !important;
 }
 
+/* Card Image Header */
+.portfolio-card-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.portfolio-card-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(10, 29, 48, 0.6) 100%
+  );
+}
+
 .card-visual-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .portfolio-item {
   transition: var(--transition-smooth);
+}
+
+/* Industry Cards */
+.portfolio-industry-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 28px 16px;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+}
+
+.portfolio-industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.portfolio-industry-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+/* Responsive filter tabs */
+@media (max-width: 768px) {
+  .btn-group {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .btn-group .btn-secondary {
+    flex: 1 1 45%;
+    border-radius: 0 !important;
+  }
+
+  .btn-group .btn-secondary:first-child {
+    border-top-left-radius: var(--border-radius) !important;
+  }
+
+  .btn-group .btn-secondary:nth-child(2) {
+    border-top-right-radius: var(--border-radius) !important;
+  }
+
+  .btn-group .btn-secondary:nth-last-child(2) {
+    border-bottom-left-radius: var(--border-radius) !important;
+  }
+
+  .btn-group .btn-secondary:last-child {
+    border-bottom-right-radius: var(--border-radius) !important;
+  }
+
+  .portfolio-stat-number {
+    font-size: 1.8rem;
+  }
 }

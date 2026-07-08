@@ -13,33 +13,24 @@
       type="image/webp"
       href="../assets/images/logoStackly.webp"
     />
-
-    <!-- Bootstrap 5.3 CSS CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-
-    <!-- Global CSS & Page Specific CSS -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/portfolio.css" />
   </head>
   <body>
-    <!-- Dynamic Header Component Placeholder -->
     <div id="header-placeholder"></div>
 
     <!-- Banner Section -->
@@ -104,7 +95,14 @@
               Wealth Planning
             </button>
             <button type="button" class="btn btn-secondary" data-filter="ma">
-              Corporate M&A
+              Corporate M&amp;A
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-filter="retirement"
+            >
+              Retirement
             </button>
           </div>
         </div>
@@ -116,6 +114,12 @@
             <div
               class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
             >
+              <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
               <div
                 class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
               >
@@ -149,6 +153,12 @@
             <div
               class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
             >
+              <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
               <div
                 class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
               >
@@ -185,15 +195,23 @@
               class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
             >
               <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
+              <div
                 class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
               >
                 <span class="badge text-dark" style="background-color: #c5a880"
-                  >Corporate M&A</span
+                  >Corporate M&amp;A</span
                 >
                 <span class="text-white-50 small">BioVectra Labs</span>
               </div>
               <div class="p-4 flex-grow-1 d-flex flex-column">
-                <h3 class="h4 mb-3">Series B Valuation & Venture Advisory</h3>
+                <h3 class="h4 mb-3">
+                  Series B Valuation &amp; Venture Advisory
+                </h3>
                 <p class="text-secondary small flex-grow-1 mb-4">
                   Stackly structured valuation stress-testing models for
                   founders during venture capitalization rounds. Our analysts
@@ -218,6 +236,12 @@
             <div
               class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
             >
+              <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
               <div
                 class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
               >
@@ -247,17 +271,323 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 5 — NEW -->
+          <div
+            class="col-lg-6 col-12 portfolio-item"
+            data-category="retirement"
+          >
+            <div
+              class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
+            >
+              <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
+              <div
+                class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
+              >
+                <span class="badge text-dark" style="background-color: #c5a880"
+                  >Retirement Planning</span
+                >
+                <span class="text-white-50 small"
+                  >Meridian Healthcare Group</span
+                >
+              </div>
+              <div class="p-4 flex-grow-1 d-flex flex-column">
+                <h3 class="h4 mb-3">
+                  Executive Retirement &amp; Deferred Compensation Plan
+                </h3>
+                <p class="text-secondary small flex-grow-1 mb-4">
+                  Stackly designed a bespoke deferred compensation and
+                  defined-benefit retirement structure for 14 C-suite executives
+                  at a regional healthcare network. We coordinated ERISA
+                  compliance, tax deferral vehicles, and succession-linked
+                  equity vesting schedules to maximise post-retirement income.
+                </p>
+                <div
+                  class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <span class="text-secondary small"
+                    >Result:
+                    <strong>$38M Retirement Assets Secured</strong></span
+                  >
+                  <a href="#" class="btn btn-primary btn-sm">Read Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 — NEW -->
+          <div class="col-lg-6 col-12 portfolio-item" data-category="wealth">
+            <div
+              class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
+            >
+              <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
+              <div
+                class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
+              >
+                <span class="badge text-dark" style="background-color: #c5a880"
+                  >Wealth Planning</span
+                >
+                <span class="text-white-50 small"
+                  >Vantage Real Estate Partners</span
+                >
+              </div>
+              <div class="p-4 flex-grow-1 d-flex flex-column">
+                <h3 class="h4 mb-3">
+                  Real Estate Portfolio Consolidation &amp; Tax Sheltering
+                </h3>
+                <p class="text-secondary small flex-grow-1 mb-4">
+                  A private real estate investment group holding 22 commercial
+                  properties across five states engaged Stackly to consolidate
+                  their fragmented ownership structures. We implemented a
+                  Delaware Statutory Trust framework and 1031 exchange strategy,
+                  deferring over $27M in capital gains tax while improving net
+                  operating income by 9%.
+                </p>
+                <div
+                  class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <span class="text-secondary small"
+                    >Result: <strong>$27M Capital Gains Deferred</strong></span
+                  >
+                  <a href="#" class="btn btn-primary btn-sm">Read Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7 — NEW -->
+          <div class="col-lg-6 col-12 portfolio-item" data-category="ma">
+            <div
+              class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
+            >
+              <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
+              <div
+                class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
+              >
+                <span class="badge text-dark" style="background-color: #c5a880"
+                  >Corporate M&amp;A</span
+                >
+                <span class="text-white-50 small">Crestline Capital Group</span>
+              </div>
+              <div class="p-4 flex-grow-1 d-flex flex-column">
+                <h3 class="h4 mb-3">
+                  Cross-Border Acquisition Due Diligence &amp; Structuring
+                </h3>
+                <p class="text-secondary small flex-grow-1 mb-4">
+                  Stackly led the financial due diligence and deal structuring
+                  for a $210M acquisition of a European logistics firm by a U.S.
+                  private equity group. Our team identified $19M in undisclosed
+                  pension liabilities, renegotiated deal terms, and structured a
+                  tax-efficient holding company in Luxembourg to optimise
+                  post-acquisition cash flows.
+                </p>
+                <div
+                  class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <span class="text-secondary small"
+                    >Result:
+                    <strong>$210M Deal Closed — 11% Better Terms</strong></span
+                  >
+                  <a href="#" class="btn btn-primary btn-sm">Read Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8 — NEW -->
+          <div class="col-lg-6 col-12 portfolio-item" data-category="tax">
+            <div
+              class="portfolio-card bg-white border rounded overflow-hidden shadow-sm d-flex flex-column h-100"
+            >
+              <div
+                class="portfolio-card-img"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=700&h=220&quot;);
+                "
+              ></div>
+              <div
+                class="card-visual-header p-4 bg-dark text-white d-flex justify-content-between align-items-center"
+              >
+                <span class="badge text-dark" style="background-color: #c5a880"
+                  >Corporate Tax Strategy</span
+                >
+                <span class="text-white-50 small">Apex Energy Solutions</span>
+              </div>
+              <div class="p-4 flex-grow-1 d-flex flex-column">
+                <h3 class="h4 mb-3">
+                  Renewable Energy Tax Credit Monetisation
+                </h3>
+                <p class="text-secondary small flex-grow-1 mb-4">
+                  Stackly advised a mid-market energy company on monetising $31M
+                  in federal Investment Tax Credits (ITC) generated by their
+                  solar infrastructure portfolio. We structured a tax equity
+                  partnership with institutional investors, converting illiquid
+                  credits into immediate working capital while maintaining full
+                  operational control of the assets.
+                </p>
+                <div
+                  class="border-top pt-3 d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <span class="text-secondary small"
+                    >Result:
+                    <strong>$31M ITC Monetised in 90 Days</strong></span
+                  >
+                  <a href="#" class="btn btn-primary btn-sm">Read Case Study</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Dynamic Footer Component Placeholder -->
+    <!-- Results by Numbers Section -->
+    <section class="py-5" style="background: var(--primary)">
+      <div class="container py-3">
+        <div class="row g-4 text-center">
+          <div class="col-lg-3 col-md-6 col-6">
+            <div class="portfolio-stat-item">
+              <h3 class="portfolio-stat-number">$4.1B+</h3>
+              <p class="portfolio-stat-label">Capital Restructured</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-6">
+            <div class="portfolio-stat-item">
+              <h3 class="portfolio-stat-number">340+</h3>
+              <p class="portfolio-stat-label">Advisory Engagements</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-6">
+            <div class="portfolio-stat-item">
+              <h3 class="portfolio-stat-number">$620M+</h3>
+              <p class="portfolio-stat-label">Tax Liability Mitigated</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-6">
+            <div class="portfolio-stat-item">
+              <h3 class="portfolio-stat-number">97%</h3>
+              <p class="portfolio-stat-label">Client Retention Rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Industries Section -->
+    <section class="section py-5" style="background: var(--accent-light)">
+      <div class="container py-5">
+        <div
+          class="section-title-wrapper text-center mx-auto mb-5"
+          style="max-width: 700px"
+        >
+          <span class="section-badge mb-3">Sectors We Serve</span>
+          <h2 class="section-title mb-3">Industries We Advise</h2>
+          <p class="section-desc m-0">
+            Our advisory expertise spans a broad range of industries, each with
+            unique capital structures, regulatory environments, and tax
+            considerations.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="portfolio-industry-card text-center">
+              <div class="portfolio-industry-icon mx-auto mb-3">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <p class="fw-bold small m-0">Technology</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="portfolio-industry-card text-center">
+              <div class="portfolio-industry-icon mx-auto mb-3">
+                <i class="fa-solid fa-hospital"></i>
+              </div>
+              <p class="fw-bold small m-0">Healthcare</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="portfolio-industry-card text-center">
+              <div class="portfolio-industry-icon mx-auto mb-3">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <p class="fw-bold small m-0">Real Estate</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="portfolio-industry-card text-center">
+              <div class="portfolio-industry-icon mx-auto mb-3">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <p class="fw-bold small m-0">Energy</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="portfolio-industry-card text-center">
+              <div class="portfolio-industry-icon mx-auto mb-3">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <p class="fw-bold small m-0">Logistics</p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="portfolio-industry-card text-center">
+              <div class="portfolio-industry-icon mx-auto mb-3">
+                <i class="fa-solid fa-flask"></i>
+              </div>
+              <p class="fw-bold small m-0">Biotech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5" style="background: var(--gold-gradient)">
+      <div class="container py-3">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8 col-12 text-center text-lg-start">
+            <h2 class="fw-bold mb-2" style="color: var(--primary)">
+              Want Results Like These for Your Portfolio?
+            </h2>
+            <p
+              class="m-0"
+              style="color: rgba(10, 29, 48, 0.7); font-size: 1.05rem"
+            >
+              Book a private consultation and let our senior advisors review
+              your current capital structure.
+            </p>
+          </div>
+          <div class="col-lg-4 col-12 text-center text-lg-end">
+            <a
+              href="contact.html"
+              class="btn btn-dark px-5 py-3 fw-bold"
+              style="border-radius: 8px; font-size: 1rem"
+            >
+              Start Your Engagement <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div id="footer-placeholder"></div>
 
-    <!-- Bootstrap Bundle JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Script File -->
     <script src="../assets/js/script.js"></script>
   </body>
 </html>

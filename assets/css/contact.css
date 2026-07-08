@@ -38,3 +38,123 @@
   color: var(--primary) !important;
   transform: scale(1.1);
 }
+
+/* ── What to Expect — Process Steps ── */
+.contact-process-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border) !important;
+}
+
+.contact-process-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--accent) !important;
+}
+
+.contact-process-step {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(197, 168, 128, 0.35);
+}
+
+/* ── All Offices Cards ── */
+.contact-office-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border) !important;
+  transition: var(--transition-smooth);
+}
+
+.contact-office-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--accent) !important;
+}
+
+.contact-office-flag {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* ── FAQ Accordion ── */
+.contact-faq-item {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-faq-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  color: #ffffff;
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border-radius: var(--border-radius);
+}
+
+.contact-faq-btn:hover,
+.contact-faq-btn:not(.collapsed) {
+  background: rgba(197, 168, 128, 0.15);
+  color: var(--accent);
+}
+
+.contact-faq-chevron {
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+  color: var(--accent);
+}
+
+.contact-faq-btn:not(.collapsed) .contact-faq-chevron {
+  transform: rotate(180deg);
+}
+
+.contact-faq-body {
+  padding: 0 20px 18px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Confidentiality Assurance Items ── */
+.contact-assurance-item {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border) !important;
+}
+
+.contact-assurance-item:hover {
+  border-color: var(--accent) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.contact-assurance-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: var(--accent-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}

@@ -79,7 +79,6 @@
     margin-bottom: 30px;
   }
 
-  /* Simulate node on mobile inside card or relative to line */
   .timeline-content-wrapper::before {
     content: "";
     position: absolute;
@@ -93,4 +92,102 @@
     z-index: 3;
     box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.15);
   }
+}
+
+/* ── Growth Stats Section ── */
+.history-stat-card {
+  padding: 20px 12px;
+}
+
+.history-stat-icon {
+  font-size: 1.8rem;
+  color: rgba(197, 168, 128, 0.5);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.history-stat-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.history-stat-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Defining Decisions Section ── */
+.history-decision-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border) !important;
+}
+
+.history-decision-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--accent) !important;
+}
+
+.history-decision-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--gold-gradient);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* ── Press Cards Section ── */
+.history-press-card {
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border) !important;
+}
+
+.history-press-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--accent) !important;
+}
+
+.history-press-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--navy-gradient);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.history-press-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--transition-fast);
+}
+
+.history-press-link i {
+  font-size: 0.75rem;
+  transition: var(--transition-fast);
+}
+
+.history-press-card:hover .history-press-link i {
+  transform: translateX(4px);
 }
