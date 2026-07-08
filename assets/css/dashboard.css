@@ -1109,3 +1109,103 @@
     height: 90px;
   }
 }
+
+/* ==========================================
+   THEME COLOR ALIGNMENTS & BOOTSTRAP OVERRIDES
+   ========================================== */
+.text-primary {
+  color: var(--primary) !important;
+}
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+.border-primary {
+  border-color: var(--primary) !important;
+}
+.btn-primary {
+  background: var(--navy-gradient) !important;
+  border: 1px solid var(--primary-dark) !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--primary-light) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+.btn-outline-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  background-color: transparent !important;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 0.25rem rgba(197, 168, 128, 0.25) !important;
+}
+.form-check-input:checked {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+.form-check-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 0.25rem rgba(197, 168, 128, 0.25) !important;
+}
+.page-link {
+  color: var(--primary) !important;
+}
+.page-link:hover {
+  background-color: var(--accent-light) !important;
+  color: var(--accent-hover) !important;
+  border-color: var(--border) !important;
+}
+.page-item.active .page-link {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+.page-link:focus {
+  box-shadow: 0 0 0 0.25rem rgba(10, 29, 48, 0.15) !important;
+}
+/* Override standard blue KPI icons to match the theme */
+.kpi-icon.blue {
+  background: rgba(10, 29, 48, 0.08) !important;
+  color: var(--primary) !important;
+}
+/* Override standard purple KPI icons to match the theme */
+.kpi-icon.purple {
+  background: var(--accent-light) !important;
+  color: var(--accent-hover) !important;
+}
+
+/* Responsive Asset Allocation Row Layout */
+@media (max-width: 576px) {
+  .alloc-row {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .alloc-name {
+    flex: 1 1 auto;
+    font-size: 0.85rem;
+  }
+  .alloc-pct {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+  .alloc-bar-track {
+    flex: 0 0 100%;
+    order: 3;
+    margin-top: 2px;
+  }
+}

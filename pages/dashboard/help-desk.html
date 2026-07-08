@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Desk | Stackly Advisory Portal</title>
+    <meta
+      name="description"
+      content="Get support, submit tickets, and read FAQs for Stackly Consulting advisory portal."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../assets/images/logoStackly.webp"
+    />
+
+    <!-- Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dash-wrapper">
+      <!-- Sidebar Overlay (mobile only) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────────────────── -->
+      <aside class="dash-sidebar" id="dashSidebar">
+        <!-- Sidebar Brand -->
+        <div class="sidebar-brand">
+          <a href="../../index.html">
+            <img
+              src="../../assets/images/logoStackly.webp"
+              alt="Stackly"
+              class="sidebar-brand-logo"
+            />
+          </a>
+        </div>
+
+        <!-- Sidebar User Card -->
+        <div class="sidebar-user d-flex align-items-center gap-3">
+          <div class="sidebar-user-avatar" id="sidebarAvatar">U</div>
+          <div class="sidebar-user-info min-w-0">
+            <h4 class="sidebar-user-name" id="sidebarName">Active User</h4>
+            <p class="sidebar-user-role" id="sidebarRole">Fiduciary Client</p>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation (Role-based & Dynamic) -->
+        <nav class="sidebar-nav">
+          <!-- Client Menu -->
+          <div data-role-section="client">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Investment Center</span>
+              <a href="client/portfolio-overview.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-chart-line"></i> Portfolio Overview
+              </a>
+              <a href="client/asset-allocation.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-chart-pie"></i> Asset Allocation
+              </a>
+              <a href="client/statements-tax.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Statements & Tax
+              </a>
+              <a href="client/advisor-chat.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-comments"></i> Advisor Chat
+              </a>
+            </div>
+          </div>
+
+          <!-- Financial Advisor Menu -->
+          <div data-role-section="advisor">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Operations Hub</span>
+              <a
+                href="financial-advisor/advisor-hub.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-user-tie"></i> Advisor Hub
+              </a>
+              <a
+                href="financial-advisor/client-directory.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-users"></i> Client Directory
+              </a>
+              <a
+                href="financial-advisor/meeting-scheduler.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-calendar-days"></i> Meeting Scheduler
+              </a>
+              <a
+                href="financial-advisor/portfolio-rebalancing.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-sliders"></i> Portfolio Rebalancing
+              </a>
+            </div>
+          </div>
+
+          <!-- Managing Partner Menu -->
+          <div data-role-section="partner">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Firm Leadership</span>
+              <a
+                href="managing-partner/executive-dashboard.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-crown"></i> Executive Dashboard
+              </a>
+              <a
+                href="managing-partner/team-performance.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-chart-gantt"></i> Team Performance
+              </a>
+              <a
+                href="managing-partner/strategic-assets.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-vault"></i> Strategic Assets
+              </a>
+              <a
+                href="managing-partner/fiduciary-compliance.html"
+                class="sidebar-nav-item"
+              >
+                <i class="fa-solid fa-scale-balanced"></i> Fiduciary &
+                Compliance
+              </a>
+            </div>
+          </div>
+
+          <!-- Administrator Menu -->
+          <div data-role-section="admin">
+            <div class="sidebar-nav-section">
+              <span class="sidebar-nav-label">Control Room</span>
+              <a href="admin/control-panel.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-gears"></i> Control Panel
+              </a>
+              <a href="admin/user-accounts.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-user-gear"></i> User Accounts
+              </a>
+              <a href="admin/system-health.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-clock"></i> System Health
+              </a>
+              <a href="admin/log-auditing.html" class="sidebar-nav-item">
+                <i class="fa-solid fa-receipt"></i> Log Auditing
+              </a>
+            </div>
+          </div>
+
+          <!-- Shared Menu -->
+          <div class="sidebar-nav-section">
+            <span class="sidebar-nav-label">Account Support</span>
+            <a href="security-settings.html" class="sidebar-nav-item">
+              <i class="fa-solid fa-user-lock"></i> Security settings
+            </a>
+            <a href="help-desk.html" class="sidebar-nav-item active">
+              <i class="fa-solid fa-circle-question"></i> Help Desk
+            </a>
+          </div>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <button class="sidebar-logout" id="logoutBtn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+      <main class="dash-main">
+        <!-- Topbar -->
+        <header class="dash-topbar">
+          <div class="dash-topbar-left">
+            <button
+              class="dash-menu-toggle"
+              id="menuToggle"
+              aria-label="Toggle Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1 class="dash-page-title" id="topbarPageTitle">
+              Help Desk & Support
+            </h1>
+          </div>
+
+          <div class="dash-topbar-right">
+            <!-- Notifications -->
+            <button class="dash-topbar-btn" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-notif-dot"></span>
+            </button>
+
+            <!-- User Badge -->
+            <div class="dash-topbar-user" id="topbarUserCard">
+              <div class="dash-topbar-avatar" id="topbarAvatar">U</div>
+              <div class="d-none d-sm-block text-start">
+                <div class="dash-topbar-name" id="topbarName">User</div>
+                <div class="dash-topbar-role" id="topbarRole">
+                  Fiduciary Client
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="dash-content">
+          <!-- Overview Cards -->
+          <div class="row g-4">
+            <!-- Submit Ticket Form -->
+            <div class="col-lg-6 col-12">
+              <div class="dash-card h-100">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">
+                    <i class="fa-solid fa-ticket"></i> Open a Support Ticket
+                  </h3>
+                </div>
+                <div class="dash-card-body">
+                  <form id="ticketForm">
+                    <div class="mb-3">
+                      <label
+                        for="ticketSubject"
+                        class="form-label small fw-bold"
+                        >Ticket Subject</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="ticketSubject"
+                        placeholder="e.g. Missing Q2 Capital Gains Statement"
+                        required
+                      />
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col-6">
+                        <label
+                          for="ticketCategory"
+                          class="form-label small fw-bold"
+                          >Category</label
+                        >
+                        <select
+                          class="form-select"
+                          id="ticketCategory"
+                          required
+                        >
+                          <option value="Portfolio Advisory">
+                            Portfolio Advisory
+                          </option>
+                          <option value="Tax Reporting">Tax Reporting</option>
+                          <option value="Technical Issues">
+                            Technical Issues
+                          </option>
+                          <option value="Compliance Roster">
+                            Compliance Roster
+                          </option>
+                          <option value="General Inquiry">
+                            General Inquiry
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <label
+                          for="ticketPriority"
+                          class="form-label small fw-bold"
+                          >Priority</label
+                        >
+                        <select
+                          class="form-select"
+                          id="ticketPriority"
+                          required
+                        >
+                          <option value="Low">Low</option>
+                          <option value="Medium" selected>Medium</option>
+                          <option value="High">High</option>
+                          <option value="Critical">Critical</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="ticketDescription"
+                        class="form-label small fw-bold"
+                        >Detailed Description</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="ticketDescription"
+                        rows="4"
+                        placeholder="Describe your issue or request here. Please include account numbers if relevant."
+                        required
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2">
+                      <i class="fa-solid fa-paper-plane"></i> Submit Support
+                      Ticket
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQs accordion -->
+            <div class="col-lg-6 col-12">
+              <div class="dash-card h-100">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">
+                    <i class="fa-solid fa-comments-question"></i> Frequently
+                    Asked Questions
+                  </h3>
+                </div>
+                <div class="dash-card-body">
+                  <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item border-0 mb-3 rounded shadow-sm">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button
+                          class="accordion-button collapsed fw-bold text-primary rounded"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseOne"
+                          aria-expanded="false"
+                          aria-controls="collapseOne"
+                        >
+                          How do I download my quarterly advisory report?
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion"
+                      >
+                        <div class="accordion-body small text-muted">
+                          Navigate to the **Statements & Tax** subpage under the
+                          Investment Center menu. There you will find download
+                          buttons in PDF format for your quarterly portfolio
+                          evaluations and active tax rosters.
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item border-0 mb-3 rounded shadow-sm">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button
+                          class="accordion-button collapsed fw-bold text-primary rounded"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="collapseTwo"
+                        >
+                          When does model portfolio rebalancing happen?
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion"
+                      >
+                        <div class="accordion-body small text-muted">
+                          Portfolio rebalancing is done quarterly by default to
+                          ensure alignment with target allocations. In the event
+                          of large market swings, your advisor will reach out to
+                          conduct an ad-hoc rebalancing analysis.
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item border-0 mb-3 rounded shadow-sm">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button
+                          class="accordion-button collapsed fw-bold text-primary rounded"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseThree"
+                          aria-expanded="false"
+                          aria-controls="collapseThree"
+                        >
+                          How do I update my bank link for funds transfer?
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion"
+                      >
+                        <div class="accordion-body small text-muted">
+                          For security and compliance reasons, bank account link
+                          updates must be verified via dual signature. Please
+                          open a support ticket under the "Compliance Roster"
+                          category to receive the digital document links.
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item border-0 mb-0 rounded shadow-sm">
+                      <h2 class="accordion-header" id="headingFour">
+                        <button
+                          class="accordion-button collapsed fw-bold text-primary rounded"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseFour"
+                          aria-expanded="false"
+                          aria-controls="collapseFour"
+                        >
+                          What are your business hours for live chat support?
+                        </button>
+                      </h2>
+                      <div
+                        id="collapseFour"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion"
+                      >
+                        <div class="accordion-body small text-muted">
+                          Advisors are active on chat from Monday to Friday,
+                          9:00 AM to 6:00 PM EST. Urgent tickets submitted
+                          outside of these hours will be handled by our on-call
+                          operations desk.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Support Ticket History -->
+            <div class="col-12">
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">
+                    <i class="fa-solid fa-rectangle-list"></i> Ticket History &
+                    Active Support Requests
+                  </h3>
+                </div>
+                <div class="dash-card-body">
+                  <div class="table-responsive">
+                    <table class="dash-table" id="ticketTable">
+                      <thead>
+                        <tr>
+                          <th>Ticket ID</th>
+                          <th>Subject</th>
+                          <th>Category</th>
+                          <th>Priority</th>
+                          <th>Date Opened</th>
+                          <th>Status State</th>
+                        </tr>
+                      </thead>
+                      <tbody id="ticketTableBody">
+                        <tr>
+                          <td class="fw-bold text-muted">#STK-98122</td>
+                          <td class="fw-bold">
+                            Request to update tax withholding forms
+                          </td>
+                          <td>Tax Reporting</td>
+                          <td>
+                            <span class="badge bg-light text-warning border"
+                              >High</span
+                            >
+                          </td>
+                          <td>July 06, 2026</td>
+                          <td>
+                            <span
+                              class="status-badge bg-warning-subtle text-warning"
+                              >Open</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="fw-bold text-muted">#STK-97811</td>
+                          <td class="fw-bold">
+                            Rebalancing approval delay notification
+                          </td>
+                          <td>Portfolio Advisory</td>
+                          <td>
+                            <span class="badge bg-light text-muted border"
+                              >Medium</span
+                            >
+                          </td>
+                          <td>June 28, 2026</td>
+                          <td>
+                            <span class="status-badge active">Resolved</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page Logic Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Enforce Authentication
+        const sessionData = sessionStorage.getItem("currentUser");
+        if (!sessionData) {
+          alert("Access Denied. Please log in to view the dashboard.");
+          window.location.href = "../login.html";
+          return;
+        }
+
+        const user = JSON.parse(sessionData);
+
+        // Map roles values to readable titles
+        const roleTitles = {
+          client: "Fiduciary Client",
+          advisor: "Financial Advisor",
+          partner: "Managing Partner",
+          admin: "Administrator",
+        };
+
+        const readableRole = roleTitles[user.role] || user.role;
+
+        // Get initials for Avatar
+        let initials = "U";
+        if (user.username) {
+          const parts = user.username.split(" ");
+          initials = parts
+            .map((p) => p[0])
+            .join("")
+            .substring(0, 2)
+            .toUpperCase();
+        } else if (user.email) {
+          initials = user.email[0].toUpperCase();
+        }
+
+        // Populate User Info
+        document.getElementById("sidebarAvatar").textContent = initials;
+        document.getElementById("sidebarName").textContent =
+          user.username || "Advisory User";
+        document.getElementById("sidebarRole").textContent = readableRole;
+        document.getElementById("topbarAvatar").textContent = initials;
+        document.getElementById("topbarName").textContent =
+          user.username || "Advisory User";
+        document.getElementById("topbarRole").textContent = readableRole;
+
+        // Apply Role-Based Visibility filter
+        const allSections = document.querySelectorAll("[data-role-section]");
+        allSections.forEach((section) => {
+          const sectionRole = section.getAttribute("data-role-section");
+          if (sectionRole === user.role) {
+            section.classList.add("visible");
+          } else {
+            section.classList.remove("visible");
+          }
+        });
+
+        // Mobile Sidebar Controls
+        const sidebar = document.getElementById("dashSidebar");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+        const menuToggle = document.getElementById("menuToggle");
+
+        menuToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("open");
+          sidebarOverlay.classList.toggle("show");
+        });
+
+        sidebarOverlay.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // Interactive Ticket Submission
+        const ticketForm = document.getElementById("ticketForm");
+        const ticketTableBody = document.getElementById("ticketTableBody");
+
+        ticketForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const subject = document.getElementById("ticketSubject").value;
+          const category = document.getElementById("ticketCategory").value;
+          const priority = document.getElementById("ticketPriority").value;
+          const today = new Date().toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          });
+
+          // Generate random ID
+          const ticketId = `#STK-${Math.floor(10000 + Math.random() * 90000)}`;
+
+          // Create badge HTML for priority
+          let priorityBadge = "";
+          if (priority === "Critical") {
+            priorityBadge =
+              '<span class="badge bg-light text-danger border">Critical</span>';
+          } else if (priority === "High") {
+            priorityBadge =
+              '<span class="badge bg-light text-warning border">High</span>';
+          } else if (priority === "Medium") {
+            priorityBadge =
+              '<span class="badge bg-light text-muted border">Medium</span>';
+          } else {
+            priorityBadge =
+              '<span class="badge bg-light text-info border">Low</span>';
+          }
+
+          // Create new row
+          const newRow = document.createElement("tr");
+          newRow.innerHTML = `
+            <td class="fw-bold text-muted">${ticketId}</td>
+            <td class="fw-bold">${subject}</td>
+            <td>${category}</td>
+            <td>${priorityBadge}</td>
+            <td>${today}</td>
+            <td><span class="status-badge bg-warning-subtle text-warning">Open</span></td>
+          `;
+
+          // Insert at the top of the table
+          ticketTableBody.insertBefore(newRow, ticketTableBody.firstChild);
+
+          alert(
+            "Ticket submitted successfully. An advisory specialist will respond within 2 business hours.",
+          );
+          ticketForm.reset();
+        });
+
+        // Logout Handler
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+          sessionStorage.removeItem("currentUser");
+          window.location.href = "../login.html";
+        });
+      });
+    </script>
+  </body>
+</html>

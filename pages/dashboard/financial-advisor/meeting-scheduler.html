@@ -80,10 +80,10 @@
           <!-- Shared Menu -->
           <div class="sidebar-nav-section">
             <span class="sidebar-nav-label">Account Support</span>
-            <a href="#" class="sidebar-nav-item">
+            <a href="../security-settings.html" class="sidebar-nav-item">
               <i class="fa-solid fa-user-lock"></i> Security settings
             </a>
-            <a href="#" class="sidebar-nav-item">
+            <a href="../help-desk.html" class="sidebar-nav-item">
               <i class="fa-solid fa-circle-question"></i> Help Desk
             </a>
           </div>
@@ -150,7 +150,7 @@
                 <div class="dash-card-body">
                   <div class="d-flex flex-column gap-3">
                     <div
-                      class="p-3 border rounded d-flex justify-content-between align-items-center bg-light"
+                      class="p-3 border rounded d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center bg-light gap-3"
                     >
                       <div>
                         <div class="badge bg-navy text-white mb-2">
@@ -171,7 +171,7 @@
                     </div>
 
                     <div
-                      class="p-3 border rounded d-flex justify-content-between align-items-center"
+                      class="p-3 border rounded d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3"
                     >
                       <div>
                         <div class="badge bg-warning text-dark mb-2">
@@ -192,7 +192,7 @@
                     </div>
 
                     <div
-                      class="p-3 border rounded d-flex justify-content-between align-items-center"
+                      class="p-3 border rounded d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3"
                     >
                       <div>
                         <div class="badge bg-secondary text-white mb-2">
@@ -361,14 +361,8 @@
 
         // Logout Handler
         document.getElementById("logoutBtn").addEventListener("click", () => {
-          if (
-            confirm(
-              "Are you sure you want to sign out of your secure portal session?",
-            )
-          ) {
-            sessionStorage.removeItem("currentUser");
-            window.location.href = "../../login.html";
-          }
+          sessionStorage.removeItem("currentUser");
+          window.location.href = "../../login.html";
         });
       });
     </script>

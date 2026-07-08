@@ -80,10 +80,10 @@
           <!-- Shared Menu -->
           <div class="sidebar-nav-section">
             <span class="sidebar-nav-label">Account Support</span>
-            <a href="#" class="sidebar-nav-item">
+            <a href="../security-settings.html" class="sidebar-nav-item">
               <i class="fa-solid fa-user-lock"></i> Security settings
             </a>
-            <a href="#" class="sidebar-nav-item">
+            <a href="../help-desk.html" class="sidebar-nav-item">
               <i class="fa-solid fa-circle-question"></i> Help Desk
             </a>
           </div>
@@ -406,14 +406,8 @@
 
         // Logout Handler
         document.getElementById("logoutBtn").addEventListener("click", () => {
-          if (
-            confirm(
-              "Are you sure you want to sign out of your secure portal session?",
-            )
-          ) {
-            sessionStorage.removeItem("currentUser");
-            window.location.href = "../../login.html";
-          }
+          sessionStorage.removeItem("currentUser");
+          window.location.href = "../../login.html";
         });
       });
     </script>
