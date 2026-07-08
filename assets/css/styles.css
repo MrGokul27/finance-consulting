@@ -889,6 +889,10 @@ a {
   padding: 32px 24px;
   transition: var(--transition-smooth);
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 .team-card:hover {
@@ -899,8 +903,11 @@ a {
 
 .team-avatar-wrap {
   position: relative;
-  display: inline-block;
-  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto 16px;
 }
 
 .team-avatar {
@@ -953,7 +960,8 @@ a {
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.65;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .team-tags {
@@ -961,6 +969,7 @@ a {
   flex-wrap: wrap;
   gap: 6px;
   justify-content: center;
+  margin-top: auto;
 }
 
 .team-tags span {
@@ -1062,7 +1071,11 @@ a {
 
 /* ==========================================
    TRUST LOGOS BANNER
-   ========================================== */
+========================================== */
+.trust-banner {
+  overflow: hidden;
+}
+
 .trust-title {
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -1071,17 +1084,69 @@ a {
   font-weight: 600;
 }
 
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
 .logo-item {
+  flex: 0 0 auto;
+  margin-right: 70px;
+  white-space: nowrap;
   font-family: "Outfit", sans-serif;
   font-size: 1.15rem;
   color: #94a3b8;
   font-weight: 700;
   letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
 .logo-item span {
   color: #cbd5e1;
   font-weight: 400;
+}
+
+.logo-item:hover {
+  color: var(--primary-color);
+}
+
+.logo-item:hover span {
+  color: var(--primary-color);
+}
+
+/* Infinite Animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on Hover */
+.logo-slider:hover .logo-track {
+  animation-play-state: paused;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-item {
+    margin-right: 45px;
+    font-size: 1rem;
+  }
+
+  .logo-track {
+    animation-duration: 15s;
+  }
 }
 
 /* ==========================================
@@ -1245,29 +1310,161 @@ a {
 }
 
 /* ==========================================
-   WORKING PROCESS
-   ========================================== */
-.process-number {
-  width: 56px;
-  height: 56px;
-  background-color: #ffffff;
-  border: 2px solid var(--accent);
+   ELEGANT PROCESS SECTION
+========================================== */
+.process-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.process-wrapper {
+  position: relative;
+}
+
+/* Golden timeline */
+@media (min-width: 992px) {
+  .process-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: 12%;
+    width: 76%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(201, 168, 97, 0.4),
+      rgba(201, 168, 97, 0.8),
+      rgba(201, 168, 97, 0.4),
+      transparent
+    );
+    z-index: 0;
+  }
+}
+
+.process-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(201, 168, 97, 0.15);
+  border-radius: 24px;
+  padding: 70px 28px 30px;
+  text-align: center;
+  transition: 0.45s ease;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gold-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.45s;
+}
+
+.process-card:hover::before {
+  transform: scaleX(1);
+}
+
+.process-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(201, 168, 97, 0.06);
   border-radius: 50%;
+  right: -70px;
+  top: -70px;
+  transition: 0.5s;
+}
+
+.process-card:hover::after {
+  transform: scale(1.2);
+}
+
+.process-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  border-color: rgba(201, 168, 97, 0.4);
+}
+
+.process-number {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--primary);
-  font-size: 1.15rem;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-smooth);
+  transition: 0.45s;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  z-index: 2;
 }
 
-.process-item:hover .process-number {
+.process-card:hover .process-number {
   background: var(--gold-gradient);
-  color: #ffffff;
-  transform: scale(1.1);
-  box-shadow: var(--shadow-md);
+  color: #fff;
+  border-color: transparent;
+  transform: translateX(-50%) rotate(360deg) scale(1.08);
+}
+
+.process-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.process-card p {
+  color: #6b7280;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.process-card:hover h4 {
+  color: var(--accent);
+}
+
+/* Step number in background */
+
+.process-card span {
+  display: none;
+}
+
+.process-card .watermark {
+  position: absolute;
+  bottom: 15px;
+  right: 18px;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: rgba(201, 168, 97, 0.05);
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .process-number {
+    position: relative;
+    top: 0;
+    margin: -105px auto 25px;
+  }
+
+  .process-card {
+    margin-top: 45px;
+  }
 }
 
 /* ==========================================

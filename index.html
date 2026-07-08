@@ -206,18 +206,26 @@
     <!-- Trust Banner -->
     <div class="trust-banner py-4 bg-white border-bottom">
       <div class="container">
-        <div class="row align-items-center g-3">
-          <div class="col-lg-3 col-12 text-center text-lg-start">
+        <div class="row align-items-center">
+          <div class="col-lg-3 col-12 text-center text-lg-start mb-3 mb-lg-0">
             <h4 class="trust-title m-0">Trusted by private capital:</h4>
           </div>
+
           <div class="col-lg-9 col-12">
-            <div
-              class="logos-grid d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center gap-4 gap-md-5"
-            >
-              <div class="logo-item">GOLDMAN <span>PARTNERS</span></div>
-              <div class="logo-item">MERRILL <span>ASSOCIATES</span></div>
-              <div class="logo-item">CREATIVE <span>WEALTH</span></div>
-              <div class="logo-item">PACIFIC <span>TRUST</span></div>
+            <div class="logo-slider">
+              <div class="logo-track">
+                <!-- Original -->
+                <div class="logo-item">GOLDMAN <span>PARTNERS</span></div>
+                <div class="logo-item">MERRILL <span>ASSOCIATES</span></div>
+                <div class="logo-item">CREATIVE <span>WEALTH</span></div>
+                <div class="logo-item">PACIFIC <span>TRUST</span></div>
+
+                <!-- Duplicate -->
+                <div class="logo-item">GOLDMAN <span>PARTNERS</span></div>
+                <div class="logo-item">MERRILL <span>ASSOCIATES</span></div>
+                <div class="logo-item">CREATIVE <span>WEALTH</span></div>
+                <div class="logo-item">PACIFIC <span>TRUST</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -229,19 +237,51 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-3 col-md-6 col-12 stat-item">
-            <h3 class="display-5 fw-bold text-warning mb-2">$2.8B+</h3>
+            <h3
+              class="display-5 fw-bold mb-2 counter"
+              data-target="2.8"
+              data-prefix="$"
+              data-suffix="B+"
+              style="color: #c5a880"
+            >
+              0
+            </h3>
             <p class="m-0 text-white-50">Assets Under Advisory</p>
           </div>
+
           <div class="col-lg-3 col-md-6 col-12 stat-item">
-            <h3 class="display-5 fw-bold text-warning mb-2">15+</h3>
+            <h3
+              class="display-5 fw-bold mb-2 counter"
+              data-target="15"
+              data-suffix="+"
+              style="color: #c5a880"
+            >
+              0
+            </h3>
             <p class="m-0 text-white-50">Years of Fiduciary Integrity</p>
           </div>
+
           <div class="col-lg-3 col-md-6 col-12 stat-item">
-            <h3 class="display-5 fw-bold text-warning mb-2">99.4%</h3>
+            <h3
+              class="display-5 fw-bold mb-2 counter"
+              data-target="99.4"
+              data-suffix="%"
+              style="color: #c5a880"
+            >
+              0
+            </h3>
             <p class="m-0 text-white-50">Client Retention Rate</p>
           </div>
+
           <div class="col-lg-3 col-md-6 col-12 stat-item">
-            <h3 class="display-5 fw-bold text-warning mb-2">250+</h3>
+            <h3
+              class="display-5 fw-bold mb-2 counter"
+              data-target="250"
+              data-suffix="+"
+              style="color: #c5a880"
+            >
+              0
+            </h3>
             <p class="m-0 text-white-50">Corporate Strategies</p>
           </div>
         </div>
@@ -362,7 +402,10 @@
 
             <div class="features-list d-flex flex-column gap-3">
               <div class="feature-list-item d-flex align-items-start gap-3">
-                <i class="fa-solid fa-vault fs-4 text-warning mt-1"></i>
+                <i
+                  class="fa-solid fa-vault fs-4 mt-1"
+                  style="color: #c5a880"
+                ></i>
                 <div>
                   <h5 class="mb-1">Bespoke Portfolio Structuring</h5>
                   <p class="m-0 text-secondary">
@@ -372,7 +415,10 @@
                 </div>
               </div>
               <div class="feature-list-item d-flex align-items-start gap-3">
-                <i class="fa-solid fa-chart-pie fs-4 text-warning mt-1"></i>
+                <i
+                  class="fa-solid fa-chart-pie fs-4 mt-1"
+                  style="color: #c5a880"
+                ></i>
                 <div>
                   <h5 class="mb-1">Sophisticated Risk Mitigation</h5>
                   <p class="m-0 text-secondary">
@@ -383,7 +429,8 @@
               </div>
               <div class="feature-list-item d-flex align-items-start gap-3">
                 <i
-                  class="fa-solid fa-scale-balanced fs-4 text-warning mt-1"
+                  class="fa-solid fa-scale-balanced fs-4 mt-1"
+                  style="color: #c5a880"
                 ></i>
                 <div>
                   <h5 class="mb-1">Intergenerational Wealth Preservation</h5>
@@ -644,7 +691,10 @@
               </svg>
 
               <div class="choose-overlay-card d-none d-sm-block">
-                <i class="fa-solid fa-award fs-1 text-warning mb-3"></i>
+                <i
+                  class="fa-solid fa-award fs-1 mb-3"
+                  style="color: #c5a880"
+                ></i>
                 <h4 class="text-white">Institutional Capital Integrity</h4>
                 <p class="m-0 text-white-50">
                   Securing corporate capital growth with audited metrics and
@@ -658,7 +708,7 @@
     </section>
 
     <!-- Working Process Section -->
-    <section class="section py-5 my-5 bg-light">
+    <section class="section process-section py-5 my-5">
       <div class="container">
         <div class="section-title-wrapper text-center mx-auto mb-5">
           <span class="section-badge mb-3">Methodology</span>
@@ -669,45 +719,50 @@
           </p>
         </div>
 
-        <div class="row g-4 text-center">
-          <!-- Step 1 -->
-          <div class="col-lg-3 col-md-6 col-12 process-item">
-            <div class="process-number mb-3 mx-auto">01</div>
-            <h4 class="mb-2">Discovery & Audit</h4>
-            <p class="text-secondary px-3">
-              Detailed analysis of existing assets, tax liabilities, corporate
-              structure, and cash flow constraints.
-            </p>
+        <div class="row g-4 position-relative process-wrapper">
+          <!-- Step -->
+          <div class="col-lg-3 col-md-6">
+            <div class="process-card">
+              <div class="process-number">01</div>
+              <h4>Discovery & Audit</h4>
+              <p>
+                Detailed analysis of existing assets, tax liabilities, corporate
+                structure, and cash flow constraints.
+              </p>
+            </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="col-lg-3 col-md-6 col-12 process-item">
-            <div class="process-number mb-3 mx-auto">02</div>
-            <h4 class="mb-2">Volatility Stress-Test</h4>
-            <p class="text-secondary px-3">
-              Running simulations of your portfolio against severe historical
-              drawdowns and structural risks.
-            </p>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-card">
+              <div class="process-number">02</div>
+              <h4>Volatility Stress-Test</h4>
+              <p>
+                Running simulations of your portfolio against severe historical
+                drawdowns and structural risks.
+              </p>
+            </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="col-lg-3 col-md-6 col-12 process-item">
-            <div class="process-number mb-3 mx-auto">03</div>
-            <h4 class="mb-2">Blueprint Formulation</h4>
-            <p class="text-secondary px-3">
-              Drafting a bespoke Investment Policy Statement containing custom
-              allocations and tax-efficient strategies.
-            </p>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-card">
+              <div class="process-number">03</div>
+              <h4>Blueprint Formulation</h4>
+              <p>
+                Drafting a bespoke Investment Policy Statement containing custom
+                allocations and tax-efficient strategies.
+              </p>
+            </div>
           </div>
 
-          <!-- Step 4 -->
-          <div class="col-lg-3 col-md-6 col-12 process-item">
-            <div class="process-number mb-3 mx-auto">04</div>
-            <h4 class="mb-2">Active Rebalancing</h4>
-            <p class="text-secondary px-3">
-              Continuous allocation tracking and strategic shifts to take
-              advantage of market mispricing.
-            </p>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-card">
+              <div class="process-number">04</div>
+              <h4>Active Rebalancing</h4>
+              <p>
+                Continuous allocation tracking and strategic shifts to take
+                advantage of market mispricing.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1014,8 +1069,7 @@
     <section class="section py-5 bg-dark text-white text-center">
       <div class="container py-4">
         <div class="section-title-wrapper text-center mx-auto mb-5">
-          <span
-            class="section-badge bg-secondary text-warning border-secondary mb-3"
+          <span class="section-badge bg-secondary border-secondary mb-3"
             >Testimonials</span
           >
           <h2 class="section-title text-white">Client Success Stories</h2>
@@ -1044,8 +1098,10 @@
                   border: 3px solid var(--accent);
                 "
               ></div>
-              <h4 class="author-name text-white m-0">Sarah Jenkins</h4>
-              <span class="author-role text-warning fs-7"
+              <h4 class="author-name m-0" style="color: #c5a880">
+                Sarah Jenkins
+              </h4>
+              <span class="author-role fs-7"
                 >Chief Financial Officer, Horizon Tech Group</span
               >
             </div>
@@ -1073,8 +1129,10 @@
                   border: 3px solid var(--accent);
                 "
               ></div>
-              <h4 class="author-name text-white m-0">Marcus Thorne</h4>
-              <span class="author-role text-warning fs-7"
+              <h4 class="author-name m-0" style="color: #c5a880">
+                Marcus Thorne
+              </h4>
+              <span class="author-role fs-7"
                 >Managing Director, Thorne Family Office</span
               >
             </div>
@@ -1101,10 +1159,10 @@
                   border: 3px solid var(--accent);
                 "
               ></div>
-              <h4 class="author-name text-white m-0">Dr. Amanda Ross</h4>
-              <span class="author-role text-warning fs-7"
-                >Co-Founder, BioVectra Labs</span
-              >
+              <h4 class="author-name m-0" style="color: #c5a880">
+                Dr. Amanda Ross
+              </h4>
+              <span class="author-role fs-7">Co-Founder, BioVectra Labs</span>
             </div>
           </div>
 
@@ -1280,5 +1338,55 @@
 
     <!-- Script File -->
     <script src="assets/js/script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+
+        const animateCounter = (counter) => {
+          const target = parseFloat(counter.dataset.target);
+          const prefix = counter.dataset.prefix || "";
+          const suffix = counter.dataset.suffix || "";
+
+          const duration = 2000; // 2 seconds
+          const startTime = performance.now();
+
+          function update(currentTime) {
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+
+            const value = target * progress;
+
+            counter.textContent =
+              prefix +
+              (Number.isInteger(target)
+                ? Math.floor(value)
+                : value.toFixed(1)) +
+              suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              counter.textContent = prefix + target + suffix;
+            }
+          }
+
+          requestAnimationFrame(update);
+        };
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
+
+        counters.forEach((counter) => observer.observe(counter));
+      });
+    </script>
   </body>
 </html>
