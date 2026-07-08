@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advisor Hub | Stackly Advisory Portal</title>
+    <meta
+      name="description"
+      content="View your wealth advisory operations center."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+
+    <!-- Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../../assets/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dash-wrapper">
+      <!-- Sidebar Overlay (mobile only) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────────────────── -->
+      <aside class="dash-sidebar" id="dashSidebar">
+        <!-- Sidebar Brand -->
+        <div class="sidebar-brand">
+          <a href="../../../index.html">
+            <img
+              src="../../../assets/images/logoStackly.webp"
+              alt="Stackly"
+              class="sidebar-brand-logo"
+            />
+          </a>
+        </div>
+
+        <!-- Sidebar User Card -->
+        <div class="sidebar-user d-flex align-items-center gap-3">
+          <div class="sidebar-user-avatar" id="sidebarAvatar">U</div>
+          <div class="sidebar-user-info min-w-0">
+            <h4 class="sidebar-user-name" id="sidebarName">Active User</h4>
+            <p class="sidebar-user-role" id="sidebarRole">Financial Advisor</p>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+          <div class="sidebar-nav-section">
+            <span class="sidebar-nav-label">Operations Hub</span>
+            <a href="advisor-hub.html" class="sidebar-nav-item active">
+              <i class="fa-solid fa-user-tie"></i> Advisor Hub
+            </a>
+            <a href="client-directory.html" class="sidebar-nav-item">
+              <i class="fa-solid fa-users"></i> Client Directory
+            </a>
+            <a href="meeting-scheduler.html" class="sidebar-nav-item">
+              <i class="fa-solid fa-calendar-days"></i> Meeting Scheduler
+            </a>
+            <a href="portfolio-rebalancing.html" class="sidebar-nav-item">
+              <i class="fa-solid fa-sliders"></i> Portfolio Rebalancing
+            </a>
+          </div>
+
+          <!-- Shared Menu -->
+          <div class="sidebar-nav-section">
+            <span class="sidebar-nav-label">Account Support</span>
+            <a href="#" class="sidebar-nav-item">
+              <i class="fa-solid fa-user-lock"></i> Security settings
+            </a>
+            <a href="#" class="sidebar-nav-item">
+              <i class="fa-solid fa-circle-question"></i> Help Desk
+            </a>
+          </div>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <button class="sidebar-logout" id="logoutBtn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+      <main class="dash-main">
+        <!-- Topbar -->
+        <header class="dash-topbar">
+          <div class="dash-topbar-left">
+            <button
+              class="dash-menu-toggle"
+              id="menuToggle"
+              aria-label="Toggle Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1 class="dash-page-title" id="topbarPageTitle">Advisor Hub</h1>
+          </div>
+
+          <div class="dash-topbar-right">
+            <!-- Notifications -->
+            <button class="dash-topbar-btn" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-notif-dot"></span>
+            </button>
+
+            <!-- User Badge -->
+            <div class="dash-topbar-user" id="topbarUserCard">
+              <div class="dash-topbar-avatar" id="topbarAvatar">U</div>
+              <div class="d-none d-sm-block text-start">
+                <div class="dash-topbar-name" id="topbarName">User</div>
+                <div class="dash-topbar-role" id="topbarRole">
+                  Financial Advisor
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="dash-content">
+          <!-- Welcome Banner -->
+          <div class="dash-welcome">
+            <div class="dash-welcome-content">
+              <span class="dash-welcome-badge" id="welcomeBadge"
+                >Operations Center</span
+              >
+              <h2 id="welcomeTitle">Welcome back, Advisor!</h2>
+              <p id="welcomeDesc" class="mb-4">
+                You have 5 clients awaiting rebalancing reviews today. Check
+                schedule and tasks below.
+              </p>
+
+              <!-- Advisor Banner Stats -->
+              <div class="dash-welcome-stats">
+                <div class="dash-welcome-stat">
+                  <h4>$54.8M</h4>
+                  <p>Managed AUM</p>
+                </div>
+                <div class="dash-welcome-stat">
+                  <h4>48</h4>
+                  <p>Active Clients</p>
+                </div>
+                <div class="dash-welcome-stat">
+                  <h4>4.9/5</h4>
+                  <p>Client Rating</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Cards Row -->
+          <div class="row g-4 mb-4">
+            <!-- Advisor KPI Cards -->
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="kpi-card">
+                <div class="kpi-icon navy">
+                  <i class="fa-solid fa-cubes-stacked"></i>
+                </div>
+                <div class="kpi-body">
+                  <div class="kpi-label">Active Portfolios</div>
+                  <div class="kpi-value">48 Accounts</div>
+                  <div class="kpi-change up">
+                    <i class="fa-solid fa-circle-check"></i> +3 clients this
+                    month
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="kpi-card">
+                <div class="kpi-icon gold">
+                  <i class="fa-solid fa-piggy-bank"></i>
+                </div>
+                <div class="kpi-body">
+                  <div class="kpi-label">Advisory Assets (AUM)</div>
+                  <div class="kpi-value">$54.82 Million</div>
+                  <div class="kpi-change up">
+                    <i class="fa-solid fa-arrow-up"></i> +$2.1M inflows YTD
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="kpi-card">
+                <div class="kpi-icon green">
+                  <i class="fa-solid fa-percent"></i>
+                </div>
+                <div class="kpi-body">
+                  <div class="kpi-label">Avg Client Returns</div>
+                  <div class="kpi-value">+14.85%</div>
+                  <div class="kpi-change up">
+                    <i class="fa-solid fa-arrow-up"></i> Outperforming benchmark
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="kpi-card">
+                <div class="kpi-icon red">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div class="kpi-body">
+                  <div class="kpi-label">Fiduciary Alerts</div>
+                  <div class="kpi-value">4 Clients</div>
+                  <div class="kpi-change down">Require rebalancing review</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <!-- Active Clients Table -->
+            <div class="col-lg-8 col-12">
+              <div class="dash-card h-100">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">
+                    <i class="fa-solid fa-users-viewfinder"></i> Active Clients
+                    Advisory List
+                  </h3>
+                  <a
+                    href="client-directory.html"
+                    class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
+                  >
+                    View All 48
+                  </a>
+                </div>
+                <div class="dash-card-body">
+                  <div class="table-responsive">
+                    <table class="dash-table">
+                      <thead>
+                        <tr>
+                          <th>Client Name</th>
+                          <th>Account Tier</th>
+                          <th>Portfolio Assets</th>
+                          <th>Performance YTD</th>
+                          <th>Last Advisory Review</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>Marcus Thorne</strong></td>
+                          <td>
+                            <span class="badge bg-dark text-warning"
+                              >Ultra HNW</span
+                            >
+                          </td>
+                          <td>$12,458,400</td>
+                          <td>
+                            <span class="text-success"
+                              ><i class="fa-solid fa-caret-up"></i>
+                              +16.82%</span
+                            >
+                          </td>
+                          <td>June 12, 2026</td>
+                          <td>
+                            <span
+                              class="badge bg-success-subtle text-success border border-success-subtle"
+                              >Review Done</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Victoria Vance</strong></td>
+                          <td>
+                            <span class="badge bg-dark text-warning"
+                              >Ultra HNW</span
+                            >
+                          </td>
+                          <td>$8,942,000</td>
+                          <td>
+                            <span class="text-success"
+                              ><i class="fa-solid fa-caret-up"></i>
+                              +14.92%</span
+                            >
+                          </td>
+                          <td>May 28, 2026</td>
+                          <td>
+                            <span
+                              class="badge bg-success-subtle text-success border border-success-subtle"
+                              >Review Done</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Albert Sterling</strong></td>
+                          <td>
+                            <span class="badge bg-light text-primary"
+                              >HNW Wealth</span
+                            >
+                          </td>
+                          <td>$3,842,500</td>
+                          <td>
+                            <span class="text-success"
+                              ><i class="fa-solid fa-caret-up"></i>
+                              +12.45%</span
+                            >
+                          </td>
+                          <td>June 02, 2026</td>
+                          <td>
+                            <span
+                              class="badge bg-warning-subtle text-warning border border-warning-subtle"
+                              >Drift Warning</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Elena Rostova</strong></td>
+                          <td>
+                            <span class="badge bg-light text-primary"
+                              >HNW Wealth</span
+                            >
+                          </td>
+                          <td>$2,481,200</td>
+                          <td>
+                            <span class="text-danger"
+                              ><i class="fa-solid fa-caret-down"></i>
+                              -1.82%</span
+                            >
+                          </td>
+                          <td>April 14, 2026</td>
+                          <td>
+                            <span
+                              class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                              >Needs Review</span
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Operations Tasks & Reminder List -->
+            <div class="col-lg-4 col-12">
+              <div class="dash-card h-100">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">
+                    <i class="fa-solid fa-clock"></i> Action Items & Checklist
+                  </h3>
+                </div>
+                <div class="dash-card-body">
+                  <div class="alloc-list mb-4">
+                    <div
+                      class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom"
+                    >
+                      <input type="checkbox" class="mt-1" id="task1" checked />
+                      <label
+                        for="task1"
+                        class="small text-decoration-line-through text-muted"
+                      >
+                        Rebalance Victoria Vance S&P exposure
+                      </label>
+                    </div>
+                    <div
+                      class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom"
+                    >
+                      <input type="checkbox" class="mt-1" id="task2" />
+                      <label for="task2" class="small">
+                        Review Q2 tax harvesting for Albert Sterling
+                      </label>
+                    </div>
+                    <div
+                      class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom"
+                    >
+                      <input type="checkbox" class="mt-1" id="task3" />
+                      <label for="task3" class="small">
+                        Schedule SEC compliance training for advisory team
+                      </label>
+                    </div>
+                    <div class="d-flex align-items-start gap-3">
+                      <input type="checkbox" class="mt-1" id="task4" />
+                      <label for="task4" class="small">
+                        Send K-1 private equity forms to HNW tier accounts
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="border rounded p-3 bg-light mt-4">
+                    <h6 class="fw-bold mb-2 text-primary">
+                      <i class="fa-solid fa-bullhorn"></i> SEC Compliance Update
+                    </h6>
+                    <p class="small text-muted mb-0">
+                      SEC Form ADV filings must be completed by July 15. Please
+                      ensure all active portfolio asset reviews are fully
+                      documented.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page Logic Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Enforce Authentication
+        const sessionData = sessionStorage.getItem("currentUser");
+        if (!sessionData) {
+          alert("Access Denied. Please log in to view the dashboard.");
+          window.location.href = "../../login.html";
+          return;
+        }
+
+        const user = JSON.parse(sessionData);
+        if (user.role !== "advisor") {
+          alert("Access Denied. You do not have permission to view this page.");
+          window.location.href = "../../dashboard.html";
+          return;
+        }
+
+        // Get initials for Avatar
+        let initials = "U";
+        if (user.username) {
+          const parts = user.username.split(" ");
+          initials = parts
+            .map((p) => p[0])
+            .join("")
+            .substring(0, 2)
+            .toUpperCase();
+        } else if (user.email) {
+          initials = user.email[0].toUpperCase();
+        }
+
+        // Populate User Info
+        document.getElementById("sidebarAvatar").textContent = initials;
+        document.getElementById("sidebarName").textContent =
+          user.username || "Advisory User";
+        document.getElementById("topbarAvatar").textContent = initials;
+        document.getElementById("topbarName").textContent =
+          user.username || "Advisory User";
+        document.getElementById("welcomeTitle").textContent =
+          "Welcome back, " + (user.username || "Advisor") + "!";
+
+        // Mobile Sidebar Controls
+        const sidebar = document.getElementById("dashSidebar");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+        const menuToggle = document.getElementById("menuToggle");
+
+        menuToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("open");
+          sidebarOverlay.classList.toggle("show");
+        });
+
+        sidebarOverlay.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // Logout Handler
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+          if (
+            confirm(
+              "Are you sure you want to sign out of your secure portal session?",
+            )
+          ) {
+            sessionStorage.removeItem("currentUser");
+            window.location.href = "../../login.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

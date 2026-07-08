@@ -1651,6 +1651,22 @@
 
         const user = JSON.parse(sessionData);
 
+        // Redirect user based on their role to their subfolder landing page
+        if (user.role === "client") {
+          window.location.href = "dashboard/client/portfolio-overview.html";
+          return;
+        } else if (user.role === "advisor") {
+          window.location.href = "dashboard/financial-advisor/advisor-hub.html";
+          return;
+        } else if (user.role === "partner") {
+          window.location.href =
+            "dashboard/managing-partner/executive-dashboard.html";
+          return;
+        } else if (user.role === "admin") {
+          window.location.href = "dashboard/admin/control-panel.html";
+          return;
+        }
+
         // Map roles values to readable titles
         const roleTitles = {
           client: "Fiduciary Client",

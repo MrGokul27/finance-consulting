@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Performance | Stackly Advisory Portal</title>
+    <meta
+      name="description"
+      content="View advisor metrics, client ratings, and compliance auditing."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+
+    <!-- Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../../assets/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dash-wrapper">
+      <!-- Sidebar Overlay (mobile only) -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- ── SIDEBAR ──────────────────────────────────────────────────────── -->
+      <aside class="dash-sidebar" id="dashSidebar">
+        <!-- Sidebar Brand -->
+        <div class="sidebar-brand">
+          <a href="../../../index.html">
+            <img
+              src="../../../assets/images/logoStackly.webp"
+              alt="Stackly"
+              class="sidebar-brand-logo"
+            />
+          </a>
+        </div>
+
+        <!-- Sidebar User Card -->
+        <div class="sidebar-user d-flex align-items-center gap-3">
+          <div class="sidebar-user-avatar" id="sidebarAvatar">U</div>
+          <div class="sidebar-user-info min-w-0">
+            <h4 class="sidebar-user-name" id="sidebarName">Active User</h4>
+            <p class="sidebar-user-role" id="sidebarRole">Managing Partner</p>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav">
+          <div class="sidebar-nav-section">
+            <span class="sidebar-nav-label">Firm Leadership</span>
+            <a href="executive-dashboard.html" class="sidebar-nav-item">
+              <i class="fa-solid fa-crown"></i> Executive Dashboard
+            </a>
+            <a href="team-performance.html" class="sidebar-nav-item active">
+              <i class="fa-solid fa-chart-gantt"></i> Team Performance
+            </a>
+            <a href="strategic-assets.html" class="sidebar-nav-item">
+              <i class="fa-solid fa-vault"></i> Strategic Assets
+            </a>
+            <a href="fiduciary-compliance.html" class="sidebar-nav-item">
+              <i class="fa-solid fa-scale-balanced"></i> Fiduciary & Compliance
+            </a>
+          </div>
+
+          <!-- Shared Menu -->
+          <div class="sidebar-nav-section">
+            <span class="sidebar-nav-label">Account Support</span>
+            <a href="#" class="sidebar-nav-item">
+              <i class="fa-solid fa-user-lock"></i> Security settings
+            </a>
+            <a href="#" class="sidebar-nav-item">
+              <i class="fa-solid fa-circle-question"></i> Help Desk
+            </a>
+          </div>
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <button class="sidebar-logout" id="logoutBtn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- ── MAIN CONTENT ────────────────────────────────────────────────── -->
+      <main class="dash-main">
+        <!-- Topbar -->
+        <header class="dash-topbar">
+          <div class="dash-topbar-left">
+            <button
+              class="dash-menu-toggle"
+              id="menuToggle"
+              aria-label="Toggle Menu"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1 class="dash-page-title" id="topbarPageTitle">
+              Team Performance
+            </h1>
+          </div>
+
+          <div class="dash-topbar-right">
+            <!-- Notifications -->
+            <button class="dash-topbar-btn" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-notif-dot"></span>
+            </button>
+
+            <!-- User Badge -->
+            <div class="dash-topbar-user" id="topbarUserCard">
+              <div class="dash-topbar-avatar" id="topbarAvatar">U</div>
+              <div class="d-none d-sm-block text-start">
+                <div class="dash-topbar-name" id="topbarName">User</div>
+                <div class="dash-topbar-role" id="topbarRole">
+                  Managing Partner
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="dash-content">
+          <div class="row g-4 mb-4">
+            <!-- Advisor Roster Table -->
+            <div class="col-lg-9 col-12">
+              <div class="dash-card h-100">
+                <div class="dash-card-header">
+                  <h3 class="dash-card-title">
+                    <i class="fa-solid fa-people-group"></i> Advisor Wealth
+                    Teams
+                  </h3>
+                </div>
+                <div class="dash-card-body">
+                  <div class="table-responsive">
+                    <table class="dash-table">
+                      <thead>
+                        <tr>
+                          <th>Lead Advisor</th>
+                          <th>Managed AUM</th>
+                          <th>Active Clients</th>
+                          <th>Avg Client Yield</th>
+                          <th>Client Satisfaction</th>
+                          <th>Compliance Score</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>Sarah Jenkins, CFA</strong></td>
+                          <td>$54.82 Million</td>
+                          <td>48 Accounts</td>
+                          <td><span class="text-success">+14.85%</span></td>
+                          <td><span class="text-warning">4.9 / 5.0</span></td>
+                          <td>
+                            <span
+                              class="badge bg-success-subtle text-success border border-success-subtle"
+                              >100% Clean</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>David Miller, CFP</strong></td>
+                          <td>$48.24 Million</td>
+                          <td>42 Accounts</td>
+                          <td><span class="text-success">+13.92%</span></td>
+                          <td><span class="text-warning">4.8 / 5.0</span></td>
+                          <td>
+                            <span
+                              class="badge bg-success-subtle text-success border border-success-subtle"
+                              >100% Clean</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Robert Chen, CFA</strong></td>
+                          <td>$42.50 Million</td>
+                          <td>38 Accounts</td>
+                          <td><span class="text-success">+12.45%</span></td>
+                          <td><span class="text-warning">4.7 / 5.0</span></td>
+                          <td>
+                            <span
+                              class="badge bg-success-subtle text-success border border-success-subtle"
+                              >100% Clean</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong>Emily Watson, CFP</strong></td>
+                          <td>$38.90 Million</td>
+                          <td>35 Accounts</td>
+                          <td><span class="text-success">+11.85%</span></td>
+                          <td><span class="text-warning">4.9 / 5.0</span></td>
+                          <td>
+                            <span
+                              class="badge bg-success-subtle text-success border border-success-subtle"
+                              >100% Clean</span
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Top Performer Side Panel -->
+            <div class="col-lg-3 col-12">
+              <div class="dash-card h-100 text-center py-4">
+                <div class="dash-card-header justify-content-center">
+                  <h3 class="dash-card-title text-center">
+                    <i class="fa-solid fa-trophy text-warning"></i> Month's Top
+                    Team
+                  </h3>
+                </div>
+                <div class="dash-card-body">
+                  <div
+                    class="dash-topbar-avatar mx-auto mb-3"
+                    style="
+                      width: 64px;
+                      height: 64px;
+                      font-size: 1.5rem;
+                      background: var(--gold-gradient);
+                    "
+                  >
+                    SJ
+                  </div>
+                  <h5 class="fw-bold mb-1">Sarah Jenkins, CFA</h5>
+                  <p class="text-muted small mb-3">
+                    Managed AUM: <strong>$54.8M</strong>
+                  </p>
+                  <p class="small text-muted">
+                    Sarah's team led Stackly this month with
+                    <strong>+$4.2M</strong> in net inflows and a perfect client
+                    satisfaction score.
+                  </p>
+                  <hr />
+                  <div class="text-start">
+                    <span class="small text-muted d-block mb-1"
+                      >Recent Achievement:</span
+                    >
+                    <strong class="small text-primary"
+                      ><i class="fa-solid fa-circle-check"></i> Closed Thorne
+                      Family Mandate</strong
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page Logic Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Enforce Authentication
+        const sessionData = sessionStorage.getItem("currentUser");
+        if (!sessionData) {
+          alert("Access Denied. Please log in to view the dashboard.");
+          window.location.href = "../../login.html";
+          return;
+        }
+
+        const user = JSON.parse(sessionData);
+        if (user.role !== "partner") {
+          alert("Access Denied. You do not have permission to view this page.");
+          window.location.href = "../../dashboard.html";
+          return;
+        }
+
+        // Get initials for Avatar
+        let initials = "U";
+        if (user.username) {
+          const parts = user.username.split(" ");
+          initials = parts
+            .map((p) => p[0])
+            .join("")
+            .substring(0, 2)
+            .toUpperCase();
+        } else if (user.email) {
+          initials = user.email[0].toUpperCase();
+        }
+
+        // Populate User Info
+        document.getElementById("sidebarAvatar").textContent = initials;
+        document.getElementById("sidebarName").textContent =
+          user.username || "Advisory User";
+        document.getElementById("topbarAvatar").textContent = initials;
+        document.getElementById("topbarName").textContent =
+          user.username || "Advisory User";
+
+        // Mobile Sidebar Controls
+        const sidebar = document.getElementById("dashSidebar");
+        const sidebarOverlay = document.getElementById("sidebarOverlay");
+        const menuToggle = document.getElementById("menuToggle");
+
+        menuToggle.addEventListener("click", () => {
+          sidebar.classList.toggle("open");
+          sidebarOverlay.classList.toggle("show");
+        });
+
+        sidebarOverlay.addEventListener("click", () => {
+          sidebar.classList.remove("open");
+          sidebarOverlay.classList.remove("show");
+        });
+
+        // Logout Handler
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+          if (
+            confirm(
+              "Are you sure you want to sign out of your secure portal session?",
+            )
+          ) {
+            sessionStorage.removeItem("currentUser");
+            window.location.href = "../../login.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
