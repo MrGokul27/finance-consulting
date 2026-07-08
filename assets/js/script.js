@@ -218,6 +218,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ── Empty / # link → 404 redirect ──────────────────────────────────────
+  const page404 = inServicesSubpage
+    ? "../404.html"
+    : inPages
+      ? "404.html"
+      : "pages/404.html";
+
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+    const href = a.getAttribute("href");
+    if (href === "#" || href === "" || href === null) {
+      e.preventDefault();
+      window.location.href = page404;
+    }
+  });
+
   // ── Dashboard chart animation ─────────────────────────────────────────────
   const bars = document.querySelectorAll(".chart-bar");
   if (bars.length) {
