@@ -42,6 +42,17 @@ document.querySelectorAll(".auth-toggle-pw").forEach((btn) => {
   });
 });
 
+// ── Empty / # link → 404 redirect ──────────────────────────────────────────
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a");
+  if (!a) return;
+  const href = a.getAttribute("href");
+  if (href === "#" || href === "" || href === null) {
+    e.preventDefault();
+    window.location.href = "404.html";
+  }
+});
+
 // ══════════════════════════════════════════════════════════════════════════════
 //  LOGIN PAGE
 // ══════════════════════════════════════════════════════════════════════════════
@@ -50,9 +61,41 @@ if (loginForm) {
   const roleEl = document.getElementById("loginRole");
   const emailEl = document.getElementById("loginEmail");
   const pwEl = document.getElementById("loginPassword");
+  const rememberMeEl = document.getElementById("rememberMe");
+
   const roleErr = document.getElementById("loginRoleErr");
   const emailErr = document.getElementById("loginEmailErr");
   const pwErr = document.getElementById("loginPasswordErr");
+  const rememberMeErr = document.getElementById("rememberMeErr");
+
+  // Strength meter elements
+  const strengthFill = document.getElementById("loginPwStrengthFill");
+  const strengthLabel = document.getElementById("loginPwStrengthLabel");
+  const ruleLen = document.getElementById("loginRuleLen");
+  const ruleUpper = document.getElementById("loginRuleUpper");
+  const ruleNum = document.getElementById("loginRuleNum");
+  const ruleSpecial = document.getElementById("loginRuleSpecial");
+
+  function evaluatePassword(pw) {
+    const r = {
+      len: pw.length >= 8,
+      upper: /[A-Z]/.test(pw),
+      num: /[0-9]/.test(pw),
+      special: /[^a-zA-Z0-9]/.test(pw),
+    };
+    ruleLen.classList.toggle("passed", r.len);
+    ruleUpper.classList.toggle("passed", r.upper);
+    ruleNum.classList.toggle("passed", r.num);
+    ruleSpecial.classList.toggle("passed", r.special);
+
+    const score = Object.values(r).filter(Boolean).length;
+    const levels = ["", "weak", "fair", "good", "strong"];
+    const labels = ["", "Weak", "Fair", "Good", "Strong"];
+    strengthFill.className = "pw-strength-fill " + (levels[score] || "");
+    strengthLabel.className = "pw-strength-label " + (levels[score] || "");
+    strengthLabel.textContent = pw.length ? labels[score] : "";
+    return score;
+  }
 
   // Live clear on change/input
   roleEl.addEventListener("change", () => {
@@ -64,7 +107,12 @@ if (loginForm) {
   });
 
   pwEl.addEventListener("input", () => {
-    if (pwEl.value) clearErr(pwEl, pwErr);
+    const score = evaluatePassword(pwEl.value);
+    if (score >= 3) clearErr(pwEl, pwErr);
+  });
+
+  rememberMeEl.addEventListener("change", () => {
+    if (rememberMeEl.checked) clearErrOnly(rememberMeErr);
   });
 
   loginForm.addEventListener("submit", (e) => {
@@ -86,10 +134,25 @@ if (loginForm) {
     }
 
     if (!pwEl.value) {
+      pwErr.textContent = "Password is required.";
       showErr(pwEl, pwErr);
       valid = false;
     } else {
-      clearErr(pwEl, pwErr);
+      const score = evaluatePassword(pwEl.value);
+      if (score < 3) {
+        pwErr.textContent = "Password does not meet complexity requirements.";
+        showErr(pwEl, pwErr);
+        valid = false;
+      } else {
+        clearErr(pwEl, pwErr);
+      }
+    }
+
+    if (!rememberMeEl.checked) {
+      showErrOnly(rememberMeErr);
+      valid = false;
+    } else {
+      clearErrOnly(rememberMeErr);
     }
 
     if (!valid) return;

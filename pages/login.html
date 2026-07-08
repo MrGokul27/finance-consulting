@@ -185,22 +185,51 @@
                   <i class="fa-solid fa-eye"></i>
                 </button>
               </div>
+              <div class="pw-strength-wrap mt-2">
+                <div class="pw-strength-bar">
+                  <div class="pw-strength-fill" id="loginPwStrengthFill"></div>
+                </div>
+                <span
+                  class="pw-strength-label"
+                  id="loginPwStrengthLabel"
+                ></span>
+              </div>
+              <div class="pw-rules mt-2" id="loginPwRules">
+                <span class="pw-rule" id="loginRuleLen"
+                  ><i class="fa-solid fa-circle"></i> 8+ characters</span
+                >
+                <span class="pw-rule" id="loginRuleUpper"
+                  ><i class="fa-solid fa-circle"></i> Uppercase letter</span
+                >
+                <span class="pw-rule" id="loginRuleNum"
+                  ><i class="fa-solid fa-circle"></i> Number</span
+                >
+                <span class="pw-rule" id="loginRuleSpecial"
+                  ><i class="fa-solid fa-circle"></i> Special character</span
+                >
+              </div>
               <span class="auth-error-msg" id="loginPasswordErr"
                 >Password is required.</span
               >
             </div>
 
             <!-- Remember Me -->
-            <div class="auth-remember d-flex align-items-center gap-2 mb-4">
-              <input
-                type="checkbox"
-                id="rememberMe"
-                name="remember"
-                class="auth-checkbox"
-                required
-              />
-              <label for="rememberMe" class="auth-remember-label"
-                >Keep me signed in for 30 days</label
+            <div class="auth-remember-wrap mb-4">
+              <div class="auth-remember d-flex align-items-center gap-2">
+                <input
+                  type="checkbox"
+                  id="rememberMe"
+                  name="remember"
+                  class="auth-checkbox"
+                  required
+                />
+                <label for="rememberMe" class="auth-remember-label"
+                  >Keep me signed in for 30 days
+                  <span class="required-star">*</span></label
+                >
+              </div>
+              <span class="auth-error-msg mt-1" id="rememberMeErr"
+                >You must check this box to continue.</span
               >
             </div>
 
