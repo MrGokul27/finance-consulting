@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const inPages = window.location.pathname.includes("/pages/");
   const root = inServicesSubpage ? "../../" : inPages ? "../" : ""; // path back to project root
   const pages = inServicesSubpage ? "../" : inPages ? "" : "pages/"; // path forward to /pages/
+  const page404 = inServicesSubpage
+    ? "../404.html"
+    : inPages
+      ? "404.html"
+      : "pages/404.html";
 
   // Build a URL for a given page slug and optional hash
   // Services subpages use data-page="services/wealth-management" etc.
@@ -125,10 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const inp = form.querySelector("input[type='email']");
         if (inp && inp.value) {
-          alert(
-            `Thank you for subscribing! We'll send insights to ${inp.value}.`,
-          );
-          inp.value = "";
+          window.location.href = page404;
         }
       });
     }
@@ -196,34 +198,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── Consultation form ─────────────────────────────────────────────────────
+  // ── Consultation/Contact form ─────────────────────────────────────────────
   const cForm = document.getElementById("contact_form");
   if (cForm) {
+    const nameInput = cForm.querySelector("input[name='con_name']");
+    if (nameInput) {
+      // Prevent typing numbers or special characters in the name field itself
+      nameInput.addEventListener("input", (e) => {
+        const start = e.target.selectionStart;
+        const end = e.target.selectionEnd;
+        const originalValue = e.target.value;
+        // Keep only letters (a-z, A-Z) and spaces
+        const newValue = originalValue.replace(/[^a-zA-Z\s]/g, "");
+        if (originalValue !== newValue) {
+          e.target.value = newValue;
+          // Restore cursor/selection position
+          const diff = originalValue.length - newValue.length;
+          e.target.setSelectionRange(start - diff, end - diff);
+        }
+      });
+
+      // Also prevent the character keydown event directly for standard character-producing keys
+      nameInput.addEventListener("keypress", (e) => {
+        const char = String.fromCharCode(e.which || e.keyCode);
+        if (!/^[a-zA-Z\s]$/.test(char)) {
+          e.preventDefault();
+        }
+      });
+    }
+
     cForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const name = cForm.querySelector("input[name='con_name']");
       const email = cForm.querySelector("input[name='con_email']");
       const message = cForm.querySelector("textarea[name='con_message']");
-      const fb =
-        cForm.querySelector(".con_message") || document.createElement("div");
-      if (name.value && email.value && message.value) {
-        fb.style.display = "block";
-        fb.className = "form-feedback success text-success fw-bold mt-2";
-        fb.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you, ${name.value}! A senior advisor will contact you within 24 hours.`;
-        cForm.reset();
-        setTimeout(() => {
-          fb.style.display = "none";
-        }, 8000);
+      if (
+        name &&
+        email &&
+        message &&
+        name.value &&
+        email.value &&
+        message.value
+      ) {
+        window.location.href = page404;
       }
     });
   }
 
   // ── Empty / # link → 404 redirect ──────────────────────────────────────
-  const page404 = inServicesSubpage
-    ? "../404.html"
-    : inPages
-      ? "404.html"
-      : "pages/404.html";
 
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a");
