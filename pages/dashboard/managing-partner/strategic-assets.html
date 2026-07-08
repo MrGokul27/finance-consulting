@@ -255,14 +255,16 @@
         // Enforce Authentication
         const sessionData = sessionStorage.getItem("currentUser");
         if (!sessionData) {
-          alert("Access Denied. Please log in to view the dashboard.");
+          console.log("Access Denied. Please log in to view the dashboard.");
           window.location.href = "../../login.html";
           return;
         }
 
         const user = JSON.parse(sessionData);
         if (user.role !== "partner") {
-          alert("Access Denied. You do not have permission to view this page.");
+          console.log(
+            "Access Denied. You do not have permission to view this page.",
+          );
           window.location.href = "../../dashboard.html";
           return;
         }
@@ -310,5 +312,7 @@
         });
       });
     </script>
+    <!-- Intercept empty links and buttons -->
+    <script src="../../../assets/js/dashboard-redirect.js"></script>
   </body>
 </html>

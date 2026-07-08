@@ -154,7 +154,7 @@
                   </div>
                   <button
                     class="btn btn-primary px-4 py-2"
-                    onclick="alert('Creating registration link...')"
+                    onclick="console.log('Creating registration link...')"
                   >
                     <i class="fa-solid fa-user-plus me-1"></i> Register Advisory
                     Account
@@ -203,13 +203,15 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-2 fs-8"
-                              onclick="alert('Opening account settings...')"
+                              onclick="
+                                console.log('Opening account settings...')
+                              "
                             >
                               <i class="fa-solid fa-user-gear"></i> Settings
                             </button>
                             <button
                               class="btn btn-sm btn-outline-danger py-1 px-2 fs-8"
-                              onclick="alert('Revoking access...')"
+                              onclick="console.log('Revoking access...')"
                             >
                               <i class="fa-solid fa-ban"></i> Revoke
                             </button>
@@ -233,13 +235,15 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-2 fs-8"
-                              onclick="alert('Opening account settings...')"
+                              onclick="
+                                console.log('Opening account settings...')
+                              "
                             >
                               <i class="fa-solid fa-user-gear"></i> Settings
                             </button>
                             <button
                               class="btn btn-sm btn-outline-danger py-1 px-2 fs-8"
-                              onclick="alert('Revoking access...')"
+                              onclick="console.log('Revoking access...')"
                             >
                               <i class="fa-solid fa-ban"></i> Revoke
                             </button>
@@ -263,13 +267,15 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-2 fs-8"
-                              onclick="alert('Opening account settings...')"
+                              onclick="
+                                console.log('Opening account settings...')
+                              "
                             >
                               <i class="fa-solid fa-user-gear"></i> Settings
                             </button>
                             <button
                               class="btn btn-sm btn-outline-danger py-1 px-2 fs-8"
-                              onclick="alert('Revoking access...')"
+                              onclick="console.log('Revoking access...')"
                             >
                               <i class="fa-solid fa-ban"></i> Revoke
                             </button>
@@ -293,13 +299,15 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-2 fs-8"
-                              onclick="alert('Opening account settings...')"
+                              onclick="
+                                console.log('Opening account settings...')
+                              "
                             >
                               <i class="fa-solid fa-user-gear"></i> Settings
                             </button>
                             <button
                               class="btn btn-sm btn-outline-danger py-1 px-2 fs-8"
-                              onclick="alert('Revoking access...')"
+                              onclick="console.log('Revoking access...')"
                             >
                               <i class="fa-solid fa-ban"></i> Revoke
                             </button>
@@ -323,13 +331,17 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-2 fs-8"
-                              onclick="alert('Opening account settings...')"
+                              onclick="
+                                console.log('Opening account settings...')
+                              "
                             >
                               <i class="fa-solid fa-user-gear"></i> Settings
                             </button>
                             <button
                               class="btn btn-sm btn-outline-danger py-1 px-2 fs-8"
-                              onclick="alert('Cannot revoke Admin account.')"
+                              onclick="
+                                console.log('Cannot revoke Admin account.')
+                              "
                               disabled
                             >
                               <i class="fa-solid fa-ban"></i> Revoke
@@ -356,14 +368,16 @@
         // Enforce Authentication
         const sessionData = sessionStorage.getItem("currentUser");
         if (!sessionData) {
-          alert("Access Denied. Please log in to view the dashboard.");
+          console.log("Access Denied. Please log in to view the dashboard.");
           window.location.href = "../../login.html";
           return;
         }
 
         const user = JSON.parse(sessionData);
         if (user.role !== "admin") {
-          alert("Access Denied. You do not have permission to view this page.");
+          console.log(
+            "Access Denied. You do not have permission to view this page.",
+          );
           window.location.href = "../../dashboard.html";
           return;
         }
@@ -411,5 +425,7 @@
         });
       });
     </script>
+    <!-- Intercept empty links and buttons -->
+    <script src="../../../assets/js/dashboard-redirect.js"></script>
   </body>
 </html>

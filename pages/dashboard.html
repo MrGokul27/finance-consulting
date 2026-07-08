@@ -1134,7 +1134,9 @@
                       </h3>
                       <button
                         class="btn btn-sm btn-outline-danger py-1 px-3 fs-7"
-                        onclick="alert('Audit logs exported successfully.')"
+                        onclick="
+                          console.log('Audit logs exported successfully.')
+                        "
                       >
                         Export CSV
                       </button>
@@ -1284,7 +1286,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Opening consultation booking calendar...')
+                            console.log(
+                              'Opening consultation booking calendar...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-calendar-plus"></i>
@@ -1295,7 +1299,9 @@
                         <a
                           href="#"
                           class="quick-action"
-                          onclick="alert('Accessing document vault files...')"
+                          onclick="
+                            console.log('Accessing document vault files...')
+                          "
                         >
                           <i class="fa-solid fa-folder-open"></i>
                           <span>Document Vault</span>
@@ -1306,7 +1312,7 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Initiating deposit/transfer wizard...')
+                            console.log('Initiating deposit/transfer wizard...')
                           "
                         >
                           <i class="fa-solid fa-money-bill-transfer"></i>
@@ -1317,7 +1323,9 @@
                         <a
                           href="#"
                           class="quick-action"
-                          onclick="alert('Opening active messaging module...')"
+                          onclick="
+                            console.log('Opening active messaging module...')
+                          "
                         >
                           <i class="fa-solid fa-paper-plane"></i>
                           <span>Contact Fiduciary</span>
@@ -1334,7 +1342,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Opening new client registration wizard...')
+                            console.log(
+                              'Opening new client registration wizard...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-user-plus"></i>
@@ -1345,7 +1355,9 @@
                         <a
                           href="#"
                           class="quick-action"
-                          onclick="alert('Opening risk assessment tool...')"
+                          onclick="
+                            console.log('Opening risk assessment tool...')
+                          "
                         >
                           <i class="fa-solid fa-gauge-high"></i>
                           <span>Risk Assessment</span>
@@ -1356,7 +1368,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Running rebalance calculation engine...')
+                            console.log(
+                              'Running rebalance calculation engine...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-sliders"></i>
@@ -1368,7 +1382,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Generating advisory report template...')
+                            console.log(
+                              'Generating advisory report template...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-file-signature"></i>
@@ -1386,7 +1402,7 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert(
+                            console.log(
                               'Generating executive firm performance summaries...',
                             )
                           "
@@ -1400,7 +1416,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Initiating advisor compliance reviews...')
+                            console.log(
+                              'Initiating advisor compliance reviews...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-user-check"></i>
@@ -1412,7 +1430,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Opening strategic budget planning maps...')
+                            console.log(
+                              'Opening strategic budget planning maps...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-map-location-dot"></i>
@@ -1424,7 +1444,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Accessing compliance database portal...')
+                            console.log(
+                              'Accessing compliance database portal...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-stamp"></i>
@@ -1442,7 +1464,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Running database optimization script...')
+                            console.log(
+                              'Running database optimization script...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-database"></i>
@@ -1453,7 +1477,9 @@
                         <a
                           href="#"
                           class="quick-action"
-                          onclick="alert('Invalidating user session tokens...')"
+                          onclick="
+                            console.log('Invalidating user session tokens...')
+                          "
                         >
                           <i class="fa-solid fa-key"></i>
                           <span>Flush Cache</span>
@@ -1464,7 +1490,9 @@
                           href="#"
                           class="quick-action"
                           onclick="
-                            alert('Opening user roles permission manager...')
+                            console.log(
+                              'Opening user roles permission manager...',
+                            )
                           "
                         >
                           <i class="fa-solid fa-shield-halved"></i>
@@ -1482,7 +1510,7 @@
                                 'Are you sure you want to trigger a system reboot?',
                               )
                             ) {
-                              alert('Rebooting servers...');
+                              console.log('Rebooting servers...');
                             }
                           "
                         >
@@ -1644,7 +1672,7 @@
         const sessionData = sessionStorage.getItem("currentUser");
         if (!sessionData) {
           // No user session found, redirect to login
-          alert("Access Denied. Please log in to view the dashboard.");
+          console.log("Access Denied. Please log in to view the dashboard.");
           window.location.href = "login.html";
           return;
         }
@@ -1791,5 +1819,7 @@
         });
       });
     </script>
+    <!-- Intercept empty links and buttons -->
+    <script src="../assets/js/dashboard-redirect.js"></script>
   </body>
 </html>

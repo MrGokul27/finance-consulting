@@ -428,7 +428,7 @@
         // Enforce Authentication
         const sessionData = sessionStorage.getItem("currentUser");
         if (!sessionData) {
-          alert("Access Denied. Please log in to view the dashboard.");
+          console.log("Access Denied. Please log in to view the dashboard.");
           window.location.href = "../login.html";
           return;
         }
@@ -508,14 +508,14 @@
           const confirmPass = document.getElementById("confirmPassword").value;
 
           if (newPass !== confirmPass) {
-            alert("New passwords do not match. Please verify.");
+            console.log("New passwords do not match. Please verify.");
             return;
           }
 
           // Update password in sessionStorage
           user.password = newPass;
           sessionStorage.setItem("currentUser", JSON.stringify(user));
-          alert("Your password has been successfully updated.");
+          console.log("Your password has been successfully updated.");
           passwordForm.reset();
         });
 
@@ -530,12 +530,12 @@
             ) {
               tfaSwitch.checked = true;
             } else {
-              alert(
+              console.log(
                 "Two-factor authentication disabled. Note: Large portfolio operations will now require phone verification.",
               );
             }
           } else {
-            alert("Two-factor authentication enabled successfully.");
+            console.log("Two-factor authentication enabled successfully.");
           }
         });
 
@@ -546,5 +546,7 @@
         });
       });
     </script>
+    <!-- Intercept empty links and buttons -->
+    <script src="../../assets/js/dashboard-redirect.js"></script>
   </body>
 </html>

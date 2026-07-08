@@ -146,15 +146,13 @@
                 </div>
                 <div class="kpi-body">
                   <div class="kpi-label">Latest Statement</div>
-                  <div class="kpi-value">
-                    Q2 2026 Advisory Report
-                  </div>
+                  <div class="kpi-value">Q2 2026 Advisory Report</div>
                   <div class="kpi-change neutral">
                     Published on July 1, 2026
                   </div>
                   <button
                     class="btn btn-sm btn-primary mt-3 px-3 py-1 fs-7"
-                    onclick="alert('Downloading Q2 2026 Statement...')"
+                    onclick="console.log('Downloading Q2 2026 Statement...')"
                   >
                     <i class="fa-solid fa-download"></i> Download Report
                   </button>
@@ -169,13 +167,11 @@
                 </div>
                 <div class="kpi-body">
                   <div class="kpi-label">Tax Statements</div>
-                  <div class="kpi-value">
-                    Tax Year 2025 Consolidated 1099
-                  </div>
+                  <div class="kpi-value">Tax Year 2025 Consolidated 1099</div>
                   <div class="kpi-change neutral">Ready for download</div>
                   <button
                     class="btn btn-sm btn-outline-primary mt-3 px-3 py-1 fs-7"
-                    onclick="alert('Downloading 2025 Form 1099...')"
+                    onclick="console.log('Downloading 2025 Form 1099...')"
                   >
                     <i class="fa-solid fa-download"></i> Download tax forms
                   </button>
@@ -212,7 +208,7 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading...')"
+                              onclick="console.log('Downloading...')"
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -226,7 +222,7 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading...')"
+                              onclick="console.log('Downloading...')"
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -240,7 +236,7 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading...')"
+                              onclick="console.log('Downloading...')"
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -254,7 +250,7 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading...')"
+                              onclick="console.log('Downloading...')"
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -296,7 +292,9 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading Tax Document...')"
+                              onclick="
+                                console.log('Downloading Tax Document...')
+                              "
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -310,7 +308,9 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading Tax Document...')"
+                              onclick="
+                                console.log('Downloading Tax Document...')
+                              "
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -326,7 +326,9 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading Tax Document...')"
+                              onclick="
+                                console.log('Downloading Tax Document...')
+                              "
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -340,7 +342,9 @@
                           <td class="text-end">
                             <button
                               class="btn btn-sm btn-outline-primary py-1 px-3 fs-7"
-                              onclick="alert('Downloading Tax Document...')"
+                              onclick="
+                                console.log('Downloading Tax Document...')
+                              "
                             >
                               <i class="fa-solid fa-arrow-down-long"></i>
                               Download
@@ -367,14 +371,16 @@
         // Enforce Authentication
         const sessionData = sessionStorage.getItem("currentUser");
         if (!sessionData) {
-          alert("Access Denied. Please log in to view the dashboard.");
+          console.log("Access Denied. Please log in to view the dashboard.");
           window.location.href = "../../login.html";
           return;
         }
 
         const user = JSON.parse(sessionData);
         if (user.role !== "client") {
-          alert("Access Denied. You do not have permission to view this page.");
+          console.log(
+            "Access Denied. You do not have permission to view this page.",
+          );
           window.location.href = "../../dashboard.html";
           return;
         }
@@ -422,5 +428,7 @@
         });
       });
     </script>
+    <!-- Intercept empty links and buttons -->
+    <script src="../../../assets/js/dashboard-redirect.js"></script>
   </body>
 </html>
