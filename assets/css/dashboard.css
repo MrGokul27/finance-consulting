@@ -262,6 +262,7 @@
   flex-direction: column;
   min-height: 100vh;
   transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0;
 }
 
 /* Topbar */
@@ -284,6 +285,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  min-width: 0;
 }
 
 .dash-menu-toggle {
@@ -312,6 +314,9 @@
   font-weight: 700;
   color: var(--primary);
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dash-topbar-right {
@@ -397,6 +402,7 @@
   flex: 1;
   padding: 28px;
   overflow-y: auto;
+  min-width: 0;
 }
 
 /* ==========================================
@@ -1098,15 +1104,143 @@
   }
 }
 
+/* Tablet: stack KPI cards neatly */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .kpi-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+}
+
+/* Small screens: hide non-essential table columns */
+@media (max-width: 767px) {
+  /* Hide middle columns on wide tables — keep col 1, last 2 */
+  .dash-table.table-hide-mid
+    th:not(:first-child):not(:last-child):not(:nth-last-child(2)),
+  .dash-table.table-hide-mid
+    td:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
+    display: none;
+  }
+
+  /* Client directory filter buttons: wrap & shrink */
+  .dash-card-body .d-flex.gap-2 {
+    flex-wrap: wrap;
+  }
+  .dash-card-body .d-flex.gap-2 .btn {
+    font-size: 0.78rem;
+    padding: 6px 10px;
+  }
+
+  /* Advisor chat contact rows */
+  .text-start .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* Alloc pct values that are dollar amounts */
+  .alloc-pct {
+    min-width: 44px;
+  }
+}
+
 @media (max-width: 576px) {
   .kpi-value {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+  }
+  .kpi-card {
+    padding: 14px 16px;
+    gap: 12px;
   }
   .dash-card-header {
     flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 16px;
+  }
+  .dash-card-body {
+    padding: 16px;
   }
   .css-chart {
     height: 90px;
+    gap: 4px;
+  }
+  .dash-topbar-user,
+  .dash-topbar-user:hover {
+    padding: 0;
+    border: none;
+    background: none;
+  }
+  .dash-welcome-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .dash-welcome-stat h4 {
+    font-size: 1rem !important;
+  }
+  .dash-welcome-stat p {
+    font-size: 0.62rem !important;
+  }
+  .dash-page-title {
+    font-size: 0.9rem;
+  }
+  .dash-content {
+    padding: 14px 12px;
+  }
+  .dash-welcome {
+    padding: 16px 14px;
+    margin-bottom: 16px;
+  }
+  .dash-welcome h2 {
+    font-size: 1.1rem;
+  }
+  .dash-welcome p {
+    font-size: 0.82rem;
+  }
+
+  /* Ticker */
+  .ticker-item {
+    min-width: 105px;
+    padding: 10px 12px;
+  }
+  .ticker-price {
+    font-size: 0.88rem;
+  }
+
+  /* Tables: hide middle columns on mobile to prevent overflow.
+     Simple 4-col tables (statements, security) keep all columns.
+     Wide 5-6 col tables use .dash-table-wide class for extra hiding. */
+  .dash-table th,
+  .dash-table td {
+    padding: 9px 8px;
+    font-size: 0.78rem;
+  }
+  /* Hide col 3 & 4 on wide tables only */
+  .dash-table-wide th:nth-child(3),
+  .dash-table-wide td:nth-child(3),
+  .dash-table-wide th:nth-child(4),
+  .dash-table-wide td:nth-child(4) {
+    display: none;
+  }
+
+  /* Allocation rows */
+  .alloc-name {
+    font-size: 0.78rem;
+  }
+  .alloc-pct {
+    min-width: 40px;
+    font-size: 0.75rem;
+  }
+
+  /* Market ticker label */
+  .section-nav-label {
+    font-size: 0.68rem !important;
+  }
+
+  /* Chat box height reduction */
+  .chat-box {
+    height: auto;
+    min-height: 420px;
   }
 }
 
@@ -1189,11 +1323,11 @@
 }
 
 /* Responsive Asset Allocation Row Layout */
-@media (max-width: 576px) {
+@media (max-width: 1200px) {
   .alloc-row {
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .alloc-name {
     flex: 1 1 auto;
@@ -1202,10 +1336,87 @@
   .alloc-pct {
     flex: 0 0 auto;
     text-align: right;
+    min-width: 44px;
   }
   .alloc-bar-track {
     flex: 0 0 100%;
     order: 3;
     margin-top: 2px;
   }
+}
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE FIXES
+   ========================================== */
+
+/* 1. Prevent Flexbox layout horizontal stretching */
+.dash-main {
+  min-width: 0;
+}
+.dash-content {
+  min-width: 0;
+  width: 100%;
+}
+
+/* 2. Force Table Responsive Wrapper Scrollbar Behavior */
+.table-responsive {
+  display: block !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* 3. Keep Table Cells Clean & Prevent Ugly Wrapping of Values */
+.dash-table th,
+.dash-table td {
+  white-space: nowrap !important;
+}
+
+/* 4. KPI Card layout adjustments for different breakpoints */
+@media (max-width: 991px) {
+  .kpi-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 18px !important;
+  }
+  .kpi-icon {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.1rem !important;
+  }
+  .kpi-value {
+    font-size: 1.35rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  /* On single-column view (max-width 576px), kpi cards return to row format */
+  .kpi-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+
+  /* Welcome stats: use responsive auto-fit instead of hardcoded 3 columns */
+  .dash-welcome-stats {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;
+    gap: 12px !important;
+  }
+}
+
+/* 5. CSS-Only Chart Scrollability and Min Bar Width */
+.css-chart {
+  width: 100% !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important; /* Firefox */
+  -webkit-overflow-scrolling: touch !important;
+}
+.css-chart::-webkit-scrollbar {
+  display: none !important; /* Safari and Chrome */
+}
+.css-bar-wrap {
+  min-width: 30px !important;
 }
