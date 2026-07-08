@@ -1,0 +1,228 @@
+/* ==========================================
+   SUB-SERVICE PAGES SHARED STYLESHEET
+   ========================================== */
+
+/* Page Banner (Inline background images will override this template) */
+.page-banner {
+  min-height: 380px;
+  position: relative;
+  border-bottom: 4px solid var(--accent);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.page-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 29, 48, 0.95) 0%,
+    rgba(21, 45, 71, 0.85) 100%
+  );
+  z-index: -1;
+}
+
+/* Floating Metrics Bar */
+.sub-page-metrics {
+  margin-top: -60px;
+  position: relative;
+  z-index: 10;
+}
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  padding: 30px 24px;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.metric-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: var(--gold-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Image Frames for Detailed Breakdown */
+.detail-img-wrapper {
+  position: relative;
+  padding: 15px;
+}
+
+.detail-img-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  border: 3px solid var(--accent);
+  border-radius: var(--border-radius);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.detail-img-wrapper img {
+  position: relative;
+  z-index: 2;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-smooth);
+  object-fit: cover;
+  height: 420px;
+  width: 100%;
+}
+
+.detail-img-wrapper:hover img {
+  transform: scale(1.02) translate(10px, 10px);
+}
+
+/* Target Audience ("Who This Is For") Section */
+.audience-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 35px 30px;
+  height: 100%;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.audience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gold-gradient);
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.audience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(197, 168, 128, 0.4);
+}
+
+.audience-card:hover::before {
+  opacity: 1;
+}
+
+.audience-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-light);
+  color: var(--accent-hover);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  transition: var(--transition-smooth);
+}
+
+.audience-card:hover .audience-icon {
+  background: var(--gold-gradient);
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+/* Gold CTA Banner */
+.gold-cta-banner {
+  background: var(--gold-gradient);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  color: var(--primary-dark);
+}
+
+.gold-cta-banner .btn-dark-theme {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(10, 29, 48, 0.2) !important;
+}
+
+.gold-cta-banner .btn-dark-theme:hover {
+  background-color: var(--primary-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 29, 48, 0.4) !important;
+}
+
+.gold-cta-banner h2 {
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+
+.gold-cta-banner p {
+  color: rgba(10, 29, 48, 0.8);
+  font-weight: 500;
+}
+
+/* Decorative background circles in CTA */
+.gold-cta-banner::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  top: -150px;
+  right: -50px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gold-cta-banner::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  bottom: -100px;
+  left: -50px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gold-cta-banner > div {
+  position: relative;
+  z-index: 1;
+}

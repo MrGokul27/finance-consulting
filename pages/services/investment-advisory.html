@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Investment Advisory & M&A | StacklyFinance</title>
+    <title>Investment Advisory & M&A | Stackly Consulting</title>
     <meta
       name="description"
       content="Institutional-grade investment advisory, corporate M&A stress-testing, and direct private equity allocation access."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../assets/images/logoStackly.webp"
     />
 
     <!-- Bootstrap 5.3 CSS CDN -->
@@ -26,48 +31,96 @@
     <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
-    <!-- Global CSS & Page Specific CSS -->
+    <!-- Global CSS & Shared Sub-page CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
-    <link rel="stylesheet" href="../../assets/css/investment-advisory.css" />
+    <link rel="stylesheet" href="../../assets/css/sub-service.css" />
   </head>
   <body>
     <!-- Dynamic Header Component Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Banner Section -->
-    <section class="page-banner py-5 text-white d-flex align-items-center">
+    <!-- Photo Hero Section -->
+    <section
+      class="page-banner py-5 text-white d-flex align-items-center"
+      style="
+        background: url(&quot;https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200&quot;)
+          center/cover;
+      "
+    >
       <div class="container py-4">
         <span class="section-badge bg-dark border-secondary mb-3"
           >Investment Advisory</span
         >
-        <h1 class="display-4 fw-bold mb-3 text-white">
+        <h1 class="display-4 fw-bold mb-3" style="color: #c5a880">
           Investment Advisory & Corporate M&A
         </h1>
-        <p class="lead text-white-50 m-0">
+        <p class="lead text-white-50 m-0" style="max-width: 700px">
           Structuring middle-market transaction models, private equity
           syndications, and balance sheet efficiency solutions backed by audited
           market logic.
         </p>
-        <nav class="breadcrumb-nav">
-          <a href="../../index.html">Home</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
-          <a href="../services.html">Services</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <nav class="breadcrumb-nav mt-3">
+          <a href="../../index.html" class="text-white-50">Home</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
+          <a href="../services.html" class="text-white-50">Services</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
           <span class="bc-current">Investment Advisory</span>
         </nav>
       </div>
     </section>
 
-    <!-- Detailed Content Section -->
+    <!-- Key Metrics Bar -->
+    <section class="sub-page-metrics mb-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">$850M+</div>
+              <div class="metric-label">Deal Volume</div>
+              <p class="metric-desc">
+                Total transaction value stress-tested and advised under our
+                audits.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">18.2%</div>
+              <div class="metric-label">Average Yield</div>
+              <p class="metric-desc">
+                Empirical realized yields across our private equity
+                co-investments.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">35+</div>
+              <div class="metric-label">Mergers Advised</div>
+              <p class="metric-desc">
+                Successful corporate acquisitions and recapitalizations
+                structured.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Breakdown with Image -->
     <section class="section py-5 my-5">
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-6 col-12">
             <span class="section-badge mb-3">Transaction Diligence</span>
-            <h2 class="mb-4 text-primary">Strategic Capital Allocation</h2>
+            <h2 class="mb-4">Strategic Capital Allocation</h2>
             <p class="text-secondary mb-4 text-justify">
               Corporate transactions require meticulous stress-testing of cash
               flows, valuation margins, and capitalization rules. Our investment
@@ -81,95 +134,126 @@
               corporate treasuries.
             </p>
 
-            <div class="row g-3 mt-2">
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i
-                    class="fa-solid fa-file-invoice-dollar text-warning fs-5"
-                  ></i>
-                  <span class="fw-bold text-primary">Valuation Modeling</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="fa-solid fa-users-rectangle text-warning fs-5"></i>
-                  <span class="fw-bold text-primary"
-                    >Institutional Syndicates</span
-                  >
-                </div>
-              </div>
-            </div>
+            <h4 class="mt-4 mb-3">Capital Deployment Vectors</h4>
+            <ul class="list-unstyled d-flex flex-column gap-2 text-secondary">
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>M&A Advisory:</strong> Structural oversight for
+                middle-market acquisitions and sales.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Syndicated Credit:</strong> Direct access to premium
+                company debt and real estate funds.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Treasury Optimization:</strong> Maximizing returns on
+                corporate liquid cash reserves.
+              </li>
+            </ul>
           </div>
-
           <div class="col-lg-6 col-12">
-            <div
-              class="sub-service-visual p-4 bg-light border rounded shadow-sm"
-            >
-              <h4 class="text-primary mb-4">Capital Deployment Vectors</h4>
-              <div class="vector-list d-flex flex-column gap-3">
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-business-time"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Buy-Side & Sell-Side Advisory</h5>
-                    <p class="text-secondary small m-0">
-                      Providing structural oversight and contract audits for
-                      middle-market acquisitions, mergers, and corporate sales.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-arrow-trend-up"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Private Equity Syndications</h5>
-                    <p class="text-secondary small m-0">
-                      Providing direct balance sheet access to premium private
-                      company shares, real estate structures, and credit
-                      allocations.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-vault"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Treasury Optimization</h5>
-                    <p class="text-secondary small m-0">
-                      Re-allocating liquid operational reserves to capture net
-                      margins while securing working capital requirements.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div class="detail-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
+                alt="Corporate transaction meeting"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Consultation CTA -->
-    <section class="section py-5 bg-light border-top border-bottom">
-      <div class="container text-center py-4">
-        <h3 class="mb-3 text-primary">Optimize Your Balance Sheet</h3>
-        <p class="text-secondary mb-4 mx-auto" style="max-width: 600px">
-          Connect with Marcus Thorne and our corporate finance panel to run
-          valuation analysis stress-tests.
-        </p>
-        <a href="../contact.html" class="btn btn-primary"
-          >Schedule Advisory Review</a
+    <!-- Who This Is For Section -->
+    <section class="section py-5 my-5 bg-light border-top border-bottom">
+      <div class="container">
+        <div
+          class="section-title-wrapper text-center mx-auto mb-5"
+          style="max-width: 600px"
         >
+          <span class="section-badge mb-3">Alignment</span>
+          <h2 class="mb-3">Who This Is For</h2>
+          <p class="text-secondary m-0">
+            Our transaction consulting is structured for entities navigating
+            complex growth or exit paths.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h4 class="mb-3">Growth-Stage Firms</h4>
+              <p class="text-secondary m-0">
+                Companies seeking capital restructuring, preparing for series
+                funding, or positioning assets for a future strategic sale.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h4 class="mb-3">Sovereign Wealth & Syndicates</h4>
+              <p class="text-secondary m-0">
+                Institutional allocators looking for verified direct
+                co-investments, distressed credit pools, and infrastructure
+                projects.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-vault"></i>
+              </div>
+              <h4 class="mb-3">Enterprise Treasurers</h4>
+              <p class="text-secondary m-0">
+                Corporate CFOs and treasurers looking to rebalance heavy cash
+                reserves into low-risk yield-generating liquid indexes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold CTA Banner -->
+    <section class="section py-5 my-5">
+      <div class="container">
+        <div class="gold-cta-banner p-5 text-white">
+          <div class="row align-items-center g-4 text-center text-lg-start">
+            <div class="col-lg-8 col-12">
+              <h2 class="mb-3">Optimize Your Balance Sheet</h2>
+              <p class="mb-0">
+                Connect with Marcus Thorne and our corporate finance panel to
+                run valuation analysis stress-tests.
+              </p>
+            </div>
+            <div class="col-lg-4 col-12 text-lg-end">
+              <a
+                href="../contact.html"
+                class="btn btn-dark-theme btn-lg px-4 py-3"
+              >
+                Schedule Advisory Review
+                <i class="fa-solid fa-chevron-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

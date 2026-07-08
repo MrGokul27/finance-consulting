@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wealth Management & Preservation | StacklyFinance</title>
+    <title>Wealth Management & Preservation | Stackly Consulting</title>
     <meta
       name="description"
       content="Institutional wealth preservation, direct indexing, and alternative portfolio design with strict fiduciary standards."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../assets/images/logoStackly.webp"
     />
 
     <!-- Bootstrap 5.3 CSS CDN -->
@@ -26,144 +31,231 @@
     <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
-    <!-- Global CSS & Page Specific CSS -->
+    <!-- Global CSS & Shared Sub-page CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
-    <link rel="stylesheet" href="../../assets/css/wealth-management.css" />
+    <link rel="stylesheet" href="../../assets/css/sub-service.css" />
   </head>
   <body>
     <!-- Dynamic Header Component Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Banner Section -->
-    <section class="page-banner py-5 text-white d-flex align-items-center">
+    <!-- Photo Hero Section -->
+    <section
+      class="page-banner py-5 text-white d-flex align-items-center"
+      style="
+        background: url(&quot;https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=1200&quot;)
+          center/cover;
+      "
+    >
       <div class="container py-4">
         <span class="section-badge bg-dark border-secondary mb-3"
           >Wealth Preservation</span
         >
-        <h1 class="display-4 fw-bold mb-3 text-white">
+        <h1 class="display-4 fw-bold mb-3" style="color: #c5a880">
           Wealth Management & Protection
         </h1>
-        <p class="lead text-white-50 m-0">
-          Securing family capital and liquid reserves against volatility using
-          sophisticated diversification frameworks and absolute fiduciary care.
+        <p class="lead text-white-50 m-0" style="max-width: 700px">
+          Securing family capital and liquid reserves against market volatility
+          using sophisticated diversification frameworks and absolute fiduciary
+          care.
         </p>
-        <nav class="breadcrumb-nav">
-          <a href="../../index.html">Home</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
-          <a href="../services.html">Services</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <nav class="breadcrumb-nav mt-3">
+          <a href="../../index.html" class="text-white-50">Home</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
+          <a href="../services.html" class="text-white-50">Services</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
           <span class="bc-current">Wealth Management</span>
         </nav>
       </div>
     </section>
 
-    <!-- Detailed Content Section -->
-    <section class="section py-5 my-5">
+    <!-- Key Metrics Bar -->
+    <section class="sub-page-metrics mb-5">
       <div class="container">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6 col-12">
-            <span class="section-badge mb-3">Our Mandate</span>
-            <h2 class="mb-4 text-primary">Custom Capital Structuring</h2>
-            <p class="text-secondary mb-4 text-justify">
-              At StacklyFinance, we understand that substantial wealth requires
-              active, individualized attention rather than index pool tracking.
-              We formulate customized mandates that balance cash flow needs with
-              long-term capital preservation goals.
-            </p>
-            <p class="text-secondary mb-4 text-justify">
-              As fiduciaries, we construct client portfolios based on direct
-              holdings, minimizing unnecessary intermediate funds and
-              intermediary commissions to optimize net yield.
-            </p>
-
-            <div class="row g-3 mt-2">
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="fa-solid fa-scale-balanced text-warning fs-5"></i>
-                  <span class="fw-bold text-primary">Fee-Only Fiduciary</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="fa-solid fa-shuffle text-warning fs-5"></i>
-                  <span class="fw-bold text-primary">Dynamic Rebalancing</span>
-                </div>
-              </div>
+        <div class="row g-4">
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">$1.2B+</div>
+              <div class="metric-label">AUM Advised</div>
+              <p class="metric-desc">
+                Fiduciary corporate and private capital reserves under active
+                advisory.
+              </p>
             </div>
           </div>
-
-          <div class="col-lg-6 col-12">
-            <div
-              class="sub-service-visual p-4 bg-light border rounded shadow-sm"
-            >
-              <h4 class="text-primary mb-4">Core Allocation Vectors</h4>
-              <div class="vector-list d-flex flex-column gap-3">
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-chart-line"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Direct Equity Indexing</h5>
-                    <p class="text-secondary small m-0">
-                      Holding underlying securities directly to allow custom tax
-                      loss harvesting and sector screens.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-building-circle-arrow-right"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Alternative Assets</h5>
-                    <p class="text-secondary small m-0">
-                      Integrating private credit, real estate syndicates, and
-                      infrastructure projects to minimize public market
-                      correlation.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-shield-halved"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Capital Defense Systems</h5>
-                    <p class="text-secondary small m-0">
-                      Hedging strategies using defensive overlays to defend core
-                      capital from tail-risk market drops.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">99.1%</div>
+              <div class="metric-label">Client Retention</div>
+              <p class="metric-desc">
+                High-trust partnership rate sustained across macro business
+                cycles.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">15+ Yrs</div>
+              <div class="metric-label">Avg Tenure</div>
+              <p class="metric-desc">
+                Senior advisors with extensive experience in corporate balance
+                sheets.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Consultation CTA -->
-    <section class="section py-5 bg-light border-top border-bottom">
-      <div class="container text-center py-4">
-        <h3 class="mb-3 text-primary">Begin Structuring Your Capital</h3>
-        <p class="text-secondary mb-4 mx-auto" style="max-width: 600px">
-          Connect with Sowat Ahsan and our wealth strategy panel to coordinate a
-          private wealth allocation audit.
-        </p>
-        <a href="../contact.html" class="btn btn-primary"
-          >Book Allocation Review</a
+    <!-- Detailed Breakdown with Image -->
+    <section class="section py-5 my-5">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 col-12">
+            <span class="section-badge mb-3">Our Mandate</span>
+            <h2 class="mb-4">Custom Capital Structuring</h2>
+            <p class="text-secondary mb-4 text-justify">
+              At Stackly Consulting, we understand that substantial wealth
+              requires active, individualized attention rather than index pool
+              tracking. We formulate customized mandates that balance cash flow
+              needs with long-term capital preservation goals.
+            </p>
+            <p class="text-secondary mb-4 text-justify">
+              As fiduciaries, we construct client portfolios based on direct
+              holdings. By holding underlying securities directly, we enable
+              targeted tax loss harvesting, eliminate hidden markups, and secure
+              a transparent capitalization yield.
+            </p>
+
+            <h4 class="mt-4 mb-3">Key Focus Allocations</h4>
+            <ul class="list-unstyled d-flex flex-column gap-2 text-secondary">
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Direct Equity Indexing:</strong> High customization with
+                zero product markup.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Alternative Asset Indexing:</strong> Private credit and
+                infrastructure integration.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Downside Mitigation:</strong> Defensive options overlays
+                to protect core liquid reserves.
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-12">
+            <div class="detail-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+                alt="Wealth management data review"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="section py-5 my-5 bg-light border-top border-bottom">
+      <div class="container">
+        <div
+          class="section-title-wrapper text-center mx-auto mb-5"
+          style="max-width: 600px"
         >
+          <span class="section-badge mb-3">Alignment</span>
+          <h2 class="mb-3">Who This Is For</h2>
+          <p class="text-secondary m-0">
+            Our services are engineered for individuals and entities with
+            complex capitalization profiles.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-house-chimney-user"></i>
+              </div>
+              <h4 class="mb-3">High Net Worth Families</h4>
+              <p class="text-secondary m-0">
+                Securing intergenerational assets, establishing family trust
+                funds, and managing structural estate transfers with minimal
+                taxation drag.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h4 class="mb-3">Corporate Founders</h4>
+              <p class="text-secondary m-0">
+                Structuring liquid capital pools from exits, pre-IPO planning,
+                and managing liquid operational cash reserves with zero
+                conflicts of interest.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <h4 class="mb-3">Private Trust Founders</h4>
+              <p class="text-secondary m-0">
+                Formulating multi-entity frameworks, foundation grant
+                strategies, and capital defense options that comply with complex
+                jurisdictional regulations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold CTA Banner -->
+    <section class="section py-5 my-5">
+      <div class="container">
+        <div class="gold-cta-banner p-5 text-white">
+          <div class="row align-items-center g-4 text-center text-lg-start">
+            <div class="col-lg-8 col-12">
+              <h2 class="mb-3">Begin Structuring Your Capital</h2>
+              <p class="mb-0">
+                Connect with Sowat Ahsan and our wealth strategy panel to
+                coordinate a private wealth allocation audit.
+              </p>
+            </div>
+            <div class="col-lg-4 col-12 text-lg-end">
+              <a
+                href="../contact.html"
+                class="btn btn-dark-theme btn-lg px-4 py-3"
+              >
+                Book Allocation Review
+                <i class="fa-solid fa-chevron-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

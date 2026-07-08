@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tax Planning & Strategy | StacklyFinance</title>
+    <title>Tax Planning & Strategy | Stackly Consulting</title>
     <meta
       name="description"
       content="Optimize multi-entity corporate structures and family trusts to isolate tax liability and protect core yields."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../assets/images/logoStackly.webp"
     />
 
     <!-- Bootstrap 5.3 CSS CDN -->
@@ -26,53 +31,101 @@
     <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
-    <!-- Global CSS & Page Specific CSS -->
+    <!-- Global CSS & Shared Sub-page CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
-    <link rel="stylesheet" href="../../assets/css/tax-planning.css" />
+    <link rel="stylesheet" href="../../assets/css/sub-service.css" />
   </head>
   <body>
     <!-- Dynamic Header Component Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Banner Section -->
-    <section class="page-banner py-5 text-white d-flex align-items-center">
+    <!-- Photo Hero Section -->
+    <section
+      class="page-banner py-5 text-white d-flex align-items-center"
+      style="
+        background: url(&quot;https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200&quot;)
+          center/cover;
+      "
+    >
       <div class="container py-4">
         <span class="section-badge bg-dark border-secondary mb-3"
           >Tax Strategy</span
         >
-        <h1 class="display-4 fw-bold mb-3 text-white">
+        <h1 class="display-4 fw-bold mb-3" style="color: #c5a880">
           Tax Planning & Corporate Strategy
         </h1>
-        <p class="lead text-white-50 m-0">
+        <p class="lead text-white-50 m-0" style="max-width: 700px">
           Engineering sophisticated entity structures, cross-border licensing
-          flows, and structural tax optimizations to insulate core earnings.
+          flows, and structural tax optimizations to insulate core earnings from
+          erosion.
         </p>
-        <nav class="breadcrumb-nav">
-          <a href="../../index.html">Home</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
-          <a href="../services.html">Services</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <nav class="breadcrumb-nav mt-3">
+          <a href="../../index.html" class="text-white-50">Home</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
+          <a href="../services.html" class="text-white-50">Services</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
           <span class="bc-current">Tax Planning</span>
         </nav>
       </div>
     </section>
 
-    <!-- Detailed Content Section -->
+    <!-- Key Metrics Bar -->
+    <section class="sub-page-metrics mb-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">22% Avg</div>
+              <div class="metric-label">Tax Savings</div>
+              <p class="metric-desc">
+                Average reduction in effective tax rates achieved across entity
+                profiles.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">450+</div>
+              <div class="metric-label">Entities Structured</div>
+              <p class="metric-desc">
+                LLCs, partnerships, and offshore divisions configured globally.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">100%</div>
+              <div class="metric-label">Compliance rate</div>
+              <p class="metric-desc">
+                Impeccable audits with rigorous adherence to jurisdictional
+                standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Breakdown with Image -->
     <section class="section py-5 my-5">
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-6 col-12">
             <span class="section-badge mb-3">Tax Positioning</span>
-            <h2 class="mb-4 text-primary">Insulating Your Returns</h2>
+            <h2 class="mb-4">Insulating Your Returns</h2>
             <p class="text-secondary mb-4 text-justify">
               High-performing portfolios and corporate operations face
-              substantial tax burdens. At StacklyFinance, we believe tax
+              substantial tax burdens. At Stackly Consulting, we believe tax
               positioning is the single most critical factor in determining net
               capitalization yield. We design bespoke tax blueprints that
-              coordinate asset allocations with your multi-entity legal tax
+              coordinate asset allocations with your multi-entity legal
               structures.
             </p>
             <p class="text-secondary mb-4 text-justify">
@@ -81,95 +134,126 @@
               designed to eliminate redundant double-taxation leakage.
             </p>
 
-            <div class="row g-3 mt-2">
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="fa-solid fa-calculator text-warning fs-5"></i>
-                  <span class="fw-bold text-primary"
-                    >Active Loss Harvesting</span
-                  >
-                </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="fa-solid fa-network-wired text-warning fs-5"></i>
-                  <span class="fw-bold text-primary"
-                    >Multi-Entity Alignment</span
-                  >
-                </div>
-              </div>
-            </div>
+            <h4 class="mt-4 mb-3">Tactical Strategy Channels</h4>
+            <ul class="list-unstyled d-flex flex-column gap-2 text-secondary">
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Entity Restructuring:</strong> Aligning holding firms,
+                LLCs, and offshore divisions.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Loss Harvesting:</strong> Continual automated screens to
+                harvest capital losses.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Sheltered Positioning:</strong> Selecting asset
+                structures with regulatory tax benefits.
+              </li>
+            </ul>
           </div>
-
           <div class="col-lg-6 col-12">
-            <div
-              class="sub-service-visual p-4 bg-light border rounded shadow-sm"
-            >
-              <h4 class="text-primary mb-4">Tactical Strategy Channels</h4>
-              <div class="vector-list d-flex flex-column gap-3">
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-diagram-project"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Corporate Entity Restructuring</h5>
-                    <p class="text-secondary small m-0">
-                      Optimizing holding corporations, LLC structures, and
-                      offshore divisions to isolate liability and minimize
-                      corporate tax rates.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-arrows-spin"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Active Tax Loss Harvesting</h5>
-                    <p class="text-secondary small m-0">
-                      Continuous monitoring of account assets to capitalize on
-                      capital losses, balancing out gains with zero drag.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-building-shield"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Tax-Sheltered Investments</h5>
-                    <p class="text-secondary small m-0">
-                      Identifying and structuring private capital investments
-                      with natural regulatory tax abatements and allowances.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div class="detail-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+                alt="Tax strategy planning review"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Consultation CTA -->
-    <section class="section py-5 bg-light border-top border-bottom">
-      <div class="container text-center py-4">
-        <h3 class="mb-3 text-primary">Request a Tax Architecture Audit</h3>
-        <p class="text-secondary mb-4 mx-auto" style="max-width: 600px">
-          Connect with Sarah Jenkins and our corporate tax panel to review
-          entity structures and cross-border cash flows.
-        </p>
-        <a href="../contact.html" class="btn btn-primary"
-          >Schedule Strategy Meeting</a
+    <!-- Who This Is For Section -->
+    <section class="section py-5 my-5 bg-light border-top border-bottom">
+      <div class="container">
+        <div
+          class="section-title-wrapper text-center mx-auto mb-5"
+          style="max-width: 600px"
         >
+          <span class="section-badge mb-3">Alignment</span>
+          <h2 class="mb-3">Who This Is For</h2>
+          <p class="text-secondary m-0">
+            Structured tax planning is critical for entities seeking to minimize
+            overhead and capital drain.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <h4 class="mb-3">Corporate Founders</h4>
+              <p class="text-secondary m-0">
+                Optimizing corporate structures pre-transaction, structuring
+                executive options payouts, and shielding operating EBITDA.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+              <h4 class="mb-3">Real Estate Syndicates</h4>
+              <p class="text-secondary m-0">
+                Deploying 1031 exchanges, depreciation allocations, and
+                establishing tax-advantaged property investment trusts.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h4 class="mb-3">Private Holding Entities</h4>
+              <p class="text-secondary m-0">
+                Structuring multi-tiered holding companies to isolate
+                intellectual property flows, licensing fees, and general
+                corporate liabilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold CTA Banner -->
+    <section class="section py-5 my-5">
+      <div class="container">
+        <div class="gold-cta-banner p-5 text-white">
+          <div class="row align-items-center g-4 text-center text-lg-start">
+            <div class="col-lg-8 col-12">
+              <h2 class="mb-3">Request a Tax Architecture Audit</h2>
+              <p class="mb-0">
+                Connect with Sarah Jenkins and our corporate tax panel to review
+                entity structures and cross-border cash flows.
+              </p>
+            </div>
+            <div class="col-lg-4 col-12 text-lg-end">
+              <a
+                href="../contact.html"
+                class="btn btn-dark-theme btn-lg px-4 py-3"
+              >
+                Schedule Strategy Meeting
+                <i class="fa-solid fa-chevron-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

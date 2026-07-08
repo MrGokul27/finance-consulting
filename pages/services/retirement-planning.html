@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Retirement & Estate Planning | StacklyFinance</title>
+    <title>Retirement & Estate Planning | Stackly Consulting</title>
     <meta
       name="description"
       content="Structure deferred compensation schemes, corporate pensions, and business transition models for wealth longevity."
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../assets/images/logoStackly.webp"
     />
 
     <!-- Bootstrap 5.3 CSS CDN -->
@@ -26,51 +31,98 @@
     <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
 
-    <!-- Global CSS & Page Specific CSS -->
+    <!-- Global CSS & Shared Sub-page CSS -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
-    <link rel="stylesheet" href="../../assets/css/retirement-planning.css" />
+    <link rel="stylesheet" href="../../assets/css/sub-service.css" />
   </head>
   <body>
     <!-- Dynamic Header Component Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Banner Section -->
-    <section class="page-banner py-5 text-white d-flex align-items-center">
+    <!-- Photo Hero Section -->
+    <section
+      class="page-banner py-5 text-white d-flex align-items-center"
+      style="
+        background: url(&quot;https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&q=80&w=1200&quot;)
+          center/cover;
+      "
+    >
       <div class="container py-4">
         <span class="section-badge bg-dark border-secondary mb-3"
           >Estate & Retirement</span
         >
-        <h1 class="display-4 fw-bold mb-3 text-white">
+        <h1 class="display-4 fw-bold mb-3" style="color: #c5a880">
           Retirement Planning & Estate Succession
         </h1>
-        <p class="lead text-white-50 m-0">
+        <p class="lead text-white-50 m-0" style="max-width: 700px">
           Protecting executive compensation structures, pension allocations, and
           family business transition roadmaps from tax erosion.
         </p>
-        <nav class="breadcrumb-nav">
-          <a href="../../index.html">Home</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
-          <a href="../services.html">Services</a>
-          <span class="bc-sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <nav class="breadcrumb-nav mt-3">
+          <a href="../../index.html" class="text-white-50">Home</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
+          <a href="../services.html" class="text-white-50">Services</a>
+          <span class="bc-sep text-white-50"
+            ><i class="fa-solid fa-chevron-right"></i
+          ></span>
           <span class="bc-current">Retirement Planning</span>
         </nav>
       </div>
     </section>
 
-    <!-- Detailed Content Section -->
+    <!-- Key Metrics Bar -->
+    <section class="sub-page-metrics mb-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">180+</div>
+              <div class="metric-label">Succession Plans</div>
+              <p class="metric-desc">
+                Multi-generational succession frameworks structured for business
+                founders.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">$500M+</div>
+              <div class="metric-label">Legacy Shielded</div>
+              <p class="metric-desc">
+                Total estate asset values sheltered from redundant taxation
+                drag.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="metric-card">
+              <div class="metric-number">24-hr</div>
+              <div class="metric-label">Transition Audits</div>
+              <p class="metric-desc">
+                Valuation audits assessing corporate buyout cash-flow readiness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Breakdown with Image -->
     <section class="section py-5 my-5">
       <div class="container">
         <div class="row g-5 align-items-center">
           <div class="col-lg-6 col-12">
             <span class="section-badge mb-3">Legacy Structuring</span>
-            <h2 class="mb-4 text-primary">Securing Wealth Longevity</h2>
+            <h2 class="mb-4">Securing Wealth Longevity</h2>
             <p class="text-secondary mb-4 text-justify">
               Structuring estate assets and retirement payouts requires careful
               balancing of asset control, liquidity parameters, and tax
-              shielding. At StacklyFinance, we specialize in structuring
+              shielding. At Stackly Consulting, we specialize in structuring
               multi-tier succession architectures that optimize payouts for
               corporate executives and business founders.
             </p>
@@ -80,93 +132,126 @@
               generation with minimal tax friction.
             </p>
 
-            <div class="row g-3 mt-2">
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="fa-solid fa-umbrella text-warning fs-5"></i>
-                  <span class="fw-bold text-primary"
-                    >Deferred Compensation</span
-                  >
-                </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="fa-solid fa-sitemap text-warning fs-5"></i>
-                  <span class="fw-bold text-primary">Business Succession</span>
-                </div>
-              </div>
-            </div>
+            <h4 class="mt-4 mb-3">Advisory Transition Vectors</h4>
+            <ul class="list-unstyled d-flex flex-column gap-2 text-secondary">
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Deferred Compensation:</strong> Tax-advantaged executive
+                options and pensions.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Buyout Strategies:</strong> Business buy-sell funding
+                and valuation transition blueprints.
+              </li>
+              <li>
+                <i
+                  class="fa-solid fa-circle-check me-2"
+                  style="color: #c5a880"
+                ></i>
+                <strong>Generational Trusts:</strong> Structuring assets to
+                optimize intergenerational purchasing power.
+              </li>
+            </ul>
           </div>
-
           <div class="col-lg-6 col-12">
-            <div
-              class="sub-service-visual p-4 bg-light border rounded shadow-sm"
-            >
-              <h4 class="text-primary mb-4">Advisory Transition Vectors</h4>
-              <div class="vector-list d-flex flex-column gap-3">
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-building-user"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Executive Compensation Structures</h5>
-                    <p class="text-secondary small m-0">
-                      Structuring tax-advantaged deferred compensation plans and
-                      executive stock options to maximize net capital retention.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-hand-holding-dollar"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Succession Valuation & Payouts</h5>
-                    <p class="text-secondary small m-0">
-                      Drafting business buyout funding strategies, buy-sell
-                      agreements, and generational corporate transitions.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="vector-item p-3 bg-white rounded border d-flex align-items-start gap-3"
-                >
-                  <div class="vector-icon flex-shrink-0 text-warning fs-4">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                  </div>
-                  <div>
-                    <h5 class="mb-1">Trust & Intergenerational Transfer</h5>
-                    <p class="text-secondary small m-0">
-                      Optimizing estate tax structures, charitable gift
-                      programs, and generational trusts to preserve purchasing
-                      power.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div class="detail-img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+                alt="Retirement planning and legacy review"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Consultation CTA -->
-    <section class="section py-5 bg-light border-top border-bottom">
-      <div class="container text-center py-4">
-        <h3 class="mb-3 text-primary">Prepare Your Succession Strategy</h3>
-        <p class="text-secondary mb-4 mx-auto" style="max-width: 600px">
-          Connect with our estate advisory panel to coordinate a comprehensive
-          succession planning audit.
-        </p>
-        <a href="../contact.html" class="btn btn-primary"
-          >Book Succession Consultation</a
+    <!-- Who This Is For Section -->
+    <section class="section py-5 my-5 bg-light border-top border-bottom">
+      <div class="container">
+        <div
+          class="section-title-wrapper text-center mx-auto mb-5"
+          style="max-width: 600px"
         >
+          <span class="section-badge mb-3">Alignment</span>
+          <h2 class="mb-3">Who This Is For</h2>
+          <p class="text-secondary m-0">
+            Succession planning is essential for founders, family businesses,
+            and high-level executives.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-sitemap"></i>
+              </div>
+              <h4 class="mb-3">Family Business Owners</h4>
+              <p class="text-secondary m-0">
+                Founders looking to pass business ownership or voting shares to
+                family successors with minimal estate or gift tax penalties.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <h4 class="mb-3">C-Suite Executives</h4>
+              <p class="text-secondary m-0">
+                Corporate executives looking to structure non-qualified deferred
+                compensation packages, pensions, and stock buyout plans.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="audience-card">
+              <div class="audience-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <h4 class="mb-3">Next-Gen Successors</h4>
+              <p class="text-secondary m-0">
+                Children or designated beneficiaries receiving complex corporate
+                holdings or real estate assets requiring fiduciary transition
+                support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold CTA Banner -->
+    <section class="section py-5 my-5">
+      <div class="container">
+        <div class="gold-cta-banner p-5 text-white">
+          <div class="row align-items-center g-4 text-center text-lg-start">
+            <div class="col-lg-8 col-12">
+              <h2 class="mb-3">Prepare Your Succession Strategy</h2>
+              <p class="mb-0">
+                Connect with our estate advisory panel to coordinate a
+                comprehensive succession planning audit.
+              </p>
+            </div>
+            <div class="col-lg-4 col-12 text-lg-end">
+              <a
+                href="../contact.html"
+                class="btn btn-dark-theme btn-lg px-4 py-3"
+              >
+                Book Succession Consultation
+                <i class="fa-solid fa-chevron-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
