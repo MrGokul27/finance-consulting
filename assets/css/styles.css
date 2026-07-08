@@ -1978,3 +1978,70 @@ a {
     font-size: 1.2rem;
   }
 }
+
+/* ── Premium Scroll Reveal Animation System ────────────────────────────────── */
+:root {
+  --reveal-duration: 0.85s;
+  --reveal-timing: cubic-bezier(0.16, 1, 0.3, 1); /* ultra-smooth expo curve */
+}
+
+.reveal {
+  opacity: 0 !important;
+  will-change: transform, opacity;
+  transition:
+    opacity var(--reveal-duration) var(--reveal-timing),
+    transform var(--reveal-duration) var(--reveal-timing),
+    filter var(--reveal-duration) var(--reveal-timing) !important;
+}
+
+.reveal-up {
+  transform: translateY(30px);
+}
+
+.reveal-down {
+  transform: translateY(-30px);
+}
+
+.reveal-left {
+  transform: translateX(-35px);
+}
+
+.reveal-right {
+  transform: translateX(35px);
+}
+
+.reveal-scale {
+  transform: scale(0.95);
+}
+
+/* Active state triggered when the element enters the viewport */
+.reveal.active {
+  opacity: 1 !important;
+  transform: translate(0) scale(1) !important;
+}
+
+/* Premium Stagger Delay Classes */
+.delay-100 {
+  transition-delay: 100ms !important;
+}
+.delay-200 {
+  transition-delay: 200ms !important;
+}
+.delay-300 {
+  transition-delay: 300ms !important;
+}
+.delay-400 {
+  transition-delay: 400ms !important;
+}
+.delay-500 {
+  transition-delay: 500ms !important;
+}
+.delay-600 {
+  transition-delay: 600ms !important;
+}
+.delay-700 {
+  transition-delay: 700ms !important;
+}
+.delay-800 {
+  transition-delay: 800ms !important;
+}

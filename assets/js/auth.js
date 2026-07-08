@@ -331,3 +331,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// ── Auth Pages Entrance Reveal Trigger ──────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll(".reveal");
+  if (revealElements.length) {
+    revealElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add("active");
+      }, index * 100);
+    });
+  }
+});

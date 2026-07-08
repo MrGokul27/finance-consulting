@@ -266,4 +266,49 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, 3000);
   }
+
+  // ── Scroll Reveal Animation System ─────────────────────────────────────────
+  const initScrollReveal = () => {
+    // Exclude dashboard pages
+    const path = window.location.pathname;
+    if (
+      path.includes("/dashboard.html") ||
+      path.includes("/pages/dashboard/")
+    ) {
+      return;
+    }
+
+    const revealElements = document.querySelectorAll(".reveal");
+    if (!revealElements.length) return;
+
+    const startRevealObserver = () => {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.05,
+          rootMargin: "0px 0px -40px 0px",
+        },
+      );
+
+      revealElements.forEach((el) => observer.observe(el));
+    };
+
+    // If preloader is present, wait until it finishes hiding before starting animations
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+      setTimeout(startRevealObserver, 2300);
+    } else {
+      // For other pages, start reveal animations immediately
+      startRevealObserver();
+    }
+  };
+
+  initScrollReveal();
 });
