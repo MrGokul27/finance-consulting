@@ -1965,6 +1965,12 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 576px) {
   .hero-title {
     font-size: 2.2rem;
@@ -1976,6 +1982,86 @@ a {
 
   .testimonial-quote {
     font-size: 1.2rem;
+  }
+
+  /* Process section fix to avoid vertical overlap */
+  .process-card {
+    margin-top: 70px;
+  }
+
+  /* Awards Grid to 1 column on smaller mobile screens */
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Finance Dashboard mobile responsive improvements */
+  .hero-visual {
+    height: auto;
+  }
+
+  .finance-dashboard {
+    position: relative;
+    height: auto;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .chart-mockup {
+    height: 100px;
+  }
+
+  .dashboard-stats {
+    gap: 8px;
+  }
+
+  .dash-stat {
+    padding: 8px 10px;
+  }
+
+  /* Contact card word wrap and size */
+  .contact-info-text h4 {
+    font-size: 0.9rem !important;
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  /* Stack stats but display contents horizontally inside each stat */
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .dash-stat {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+  }
+
+  .dash-stat-label {
+    margin: 0;
+    font-size: 0.62rem;
+  }
+
+  .dash-stat-value {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .dash-stat-change {
+    font-size: 0.65rem;
+    margin: 0;
+  }
+
+  .dashboard-footer-row {
+    gap: 8px;
+    padding-top: 8px;
   }
 }
 
